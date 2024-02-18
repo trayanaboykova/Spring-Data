@@ -20,6 +20,7 @@ public class Main {
         // Execute Query
         PreparedStatement preparedStatement =
                 connection.prepareStatement("SELECT * FROM employees WHERE salary > ? LIMIT 10");
+
         preparedStatement.setDouble(1, 17000);
         ResultSet resultSet = preparedStatement.executeQuery();
 
