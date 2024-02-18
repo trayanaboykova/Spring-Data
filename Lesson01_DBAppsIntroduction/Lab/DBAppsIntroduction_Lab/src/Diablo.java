@@ -31,7 +31,9 @@ public class Diablo {
         ResultSet result = preparedStatement.executeQuery();
 
         // Print Result
-        if (result.next()) { // has valid user data
+        result.next();
+        Object userId = result.getObject(1);
+        if (userId != null) { // has valid user data
             System.out.printf("User: %s%n %s %s has played %d games",
                     user,
                     result.getString(1),
