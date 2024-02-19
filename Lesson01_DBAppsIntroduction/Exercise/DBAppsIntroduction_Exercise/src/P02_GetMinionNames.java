@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class P02_GetMinionNames {
-    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
@@ -16,7 +15,7 @@ public class P02_GetMinionNames {
         DBTools dbTools = new DBTools(username, password, "minions_db");
 
         // Statement logic -> create query
-        int villainId = Integer.parseInt(SCANNER.nextLine());
+        int villainId = Integer.parseInt(scanner.nextLine());
 
 
         String query = "SELECT name FROM villains WHERE id = ?";
