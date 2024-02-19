@@ -14,10 +14,7 @@ public class P01_GetVillainsNames {
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
-        Properties properties = new Properties();
-        properties.setProperty("user", username);
-        properties.setProperty("password", password);
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", properties);
+        DBTools dbTools = new DBTools(username, password, "minions_db");
 
         // Statement logic -> create query
         String query =
@@ -27,7 +24,7 @@ public class P01_GetVillainsNames {
                 "GROUP BY v.name " +
                 "HAVING count > 15 " +
                 "ORDER BY count DESC;";
-        ResultSet resultSet = connection.createStatement().executeQuery(query);
+        ResultSet resultSet = dbTools.getConnection().createStatement().executeQuery(query);
 
         // Query output
         while (resultSet.next()){
