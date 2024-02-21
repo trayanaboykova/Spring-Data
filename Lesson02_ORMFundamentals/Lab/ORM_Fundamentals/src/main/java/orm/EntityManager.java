@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EntityManager<E> implements DatabaseContext<E> {
+    private static final String INSERT_TEMPLATE = "INSERT INTO %s (%s) VALUES (%s)";
+    private static final String UPDATE_WITH_WHERE_TEMPLATE = "UPDATE %s SET %s WHERE %s";
     private Connection connection;
 
     public EntityManager(Connection connection) {
@@ -20,8 +22,43 @@ public class EntityManager<E> implements DatabaseContext<E> {
 
     @Override
     public boolean persist(E entity) throws SQLException, IllegalAccessException {
-        String insertStatement = "INSERT INTO %s (%s) VALUES (%s)";
+        Field idColumn = getIdColumn(entity);
+        idColumn.setAccessible(true);
+        Object idValue = idColumn.get(entity);
 
+
+        if (idValue == null || (long) idValue == 0) {
+            return doInsert(entity);
+        }
+
+        return doUpdate(entity, idColumn, idValue);
+    }
+
+    private boolean doUpdate(E entity, Field idColumn, Object idValue) throws IllegalAccessException, SQLException {
+        String tableName = getTableName(entity);
+        List<String> columns = getColumnsWithoutId(entity);
+        List<String> values = getColumnValuesWithoutId(entity);
+
+        List<String> columnsWithValues = new ArrayList<>();
+        for (int i = 0; i < columns.size(); i++) {
+            String s = columns.get(i) + "=" + values.get(i);
+            columnsWithValues.add(s);
+        }
+
+        String idCondition = String.format("%s=%s", idColumn.getName(), idValue.toString());
+
+        String updateQuery = String.format(UPDATE_WITH_WHERE_TEMPLATE,
+                tableName,
+                String.join(",", columnsWithValues),
+                idCondition);
+
+        PreparedStatement statement = connection.prepareStatement(updateQuery);
+        int updateCount = statement.executeUpdate();
+
+        return updateCount == 1;
+    }
+
+    private boolean doInsert(E entity) throws IllegalAccessException, SQLException {
         // Generate INSERT
         // Get table name
         // Collect column without ID
@@ -31,7 +68,7 @@ public class EntityManager<E> implements DatabaseContext<E> {
         List<String> columnsList = getColumnsWithoutId(entity);
         List<String> values = getColumnValuesWithoutId(entity);
 
-        String formattedInsert = String.format(insertStatement,
+        String formattedInsert = String.format(INSERT_TEMPLATE,
                 tableName,
                 String.join(",", columnsList),
                 String.join(",", values));
@@ -62,6 +99,17 @@ public class EntityManager<E> implements DatabaseContext<E> {
     @Override
     public E findFirst(Class<E> table, String where) {
         return null;
+    }
+
+    private Field getIdColumn(E entity) {
+        Field[] declaredFields = entity.getClass().getDeclaredFields();
+
+        for (Field declaredField : declaredFields) {
+            if (declaredField.isAnnotationPresent(Id.class)) {
+                return declaredField;
+            }
+        }
+        throw new RuntimeException("Entity has no Id column");
     }
 
     private String getTableName(E entity) {
