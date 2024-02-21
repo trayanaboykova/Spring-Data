@@ -14,11 +14,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class EntityManager<E> implements DatabaseContext<E> {
     private static final String INSERT_TEMPLATE = "INSERT INTO %s (%s) VALUES (%s)";
     private static final String UPDATE_WITH_WHERE_TEMPLATE = "UPDATE %s SET %s WHERE %s";
     private static final String SELECT_WITH_WHERE_PLACEHOLDER_TEMPLATE = "SELECT %s FROM %s %s";
-    private Connection connection;
+    private final Connection connection;
 
     public EntityManager(Connection connection) {
         this.connection = connection;
@@ -37,6 +38,7 @@ public class EntityManager<E> implements DatabaseContext<E> {
 
         return doUpdate(entity, idColumn, idValue);
     }
+
 
     private boolean doUpdate(E entity, Field idColumn, Object idValue) throws IllegalAccessException, SQLException {
         String tableName = getTableName(entity);
@@ -89,17 +91,36 @@ public class EntityManager<E> implements DatabaseContext<E> {
     public Iterable<E> find(Class<E> table) throws SQLException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         return find(table, null);
     }
-
     @Override
     public Iterable<E> find(Class<E> table, String where) throws SQLException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        return baseFind(table, where, null);
+    }
+
+    @Override
+    public E findFirst(Class<E> table) throws SQLException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        return findFirst(table, null);
+    }
+
+    @Override
+    public E findFirst(Class<E> table, String where) throws SQLException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        List<E> result = baseFind(table, where, 1);
+
+        if (result.isEmpty()) {
+            return null;
+        }
+        return result.get(0);
+    }
+
+    private List<E> baseFind(Class<E> table, String where, Integer limit) throws SQLException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         String fieldList = "*";
         String tableName = getTableName(table);
         String whereClause = where == null ? "" : "WHERE " + where;
+        String limitClause = limit == null ? "" : " LIMIT " + limit;
 
         String selectStatement = String.format(SELECT_WITH_WHERE_PLACEHOLDER_TEMPLATE,
                 fieldList,
                 tableName,
-                whereClause);
+                whereClause + limitClause);
 
         PreparedStatement preparedStatement = connection.prepareStatement(selectStatement);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -111,7 +132,6 @@ public class EntityManager<E> implements DatabaseContext<E> {
         }
         return result;
     }
-
     private E generateEntity(Class<E> table, ResultSet resultSet) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, SQLException {
         // Create object
         E result = table.getDeclaredConstructor().newInstance(); // new User(); new E();
@@ -145,17 +165,6 @@ public class EntityManager<E> implements DatabaseContext<E> {
         } else {
             throw new RuntimeException("Unsupported type " + javaType);
         }
-    }
-
-
-    @Override
-    public E findFirst(Class<E> table) {
-        return findFirst(table, null);
-    }
-
-    @Override
-    public E findFirst(Class<E> table, String where) {
-        return null;
     }
 
     private Field getIdColumn(E entity) {
