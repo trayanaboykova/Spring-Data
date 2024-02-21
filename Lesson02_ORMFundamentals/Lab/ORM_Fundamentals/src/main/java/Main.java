@@ -1,3 +1,4 @@
+import entities.Order;
 import entities.User;
 import orm.EntityManager;
 import orm.MyConnector;
@@ -30,5 +31,9 @@ public class Main {
         //    EntityManager<Product> productEntityManager = new EntityManager<>(connection);
         //    Product song = new Product("willow", 1);
         //    productEntityManager.persist(song);
+
+        EntityManager<Order> orderEntityManager = new EntityManager<>(connection);
+        Order tay13 = new Order("tay13", LocalDate.now());
+        orderEntityManager.persist(tay13);
     }
 }
