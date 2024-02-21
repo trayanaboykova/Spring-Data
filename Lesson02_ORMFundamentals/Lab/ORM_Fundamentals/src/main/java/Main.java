@@ -20,7 +20,8 @@ public class Main {
         Connection connection = MyConnector.getConnection();
 
         EntityManager<User> userEntityManager = new EntityManager<>(connection);
-        User taylor = new User("taylor", 13, LocalDate.now());
+        User taylor = new User("taylor", 33, LocalDate.now());
+        taylor.setId(1);
         userEntityManager.persist(taylor);
 
     //    EntityManager<Product> productEntityManager = new EntityManager<>(connection);
