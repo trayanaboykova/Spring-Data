@@ -3,13 +3,14 @@ import entities.User;
 import orm.EntityManager;
 import orm.MyConnector;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws SQLException, IllegalAccessException {
+    public static void main(String[] args) throws SQLException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Username: ");
         String username = scanner.nextLine();
@@ -24,8 +25,11 @@ public class Main {
         taylor.setId(1);
         userEntityManager.persist(taylor);
 
-    //    EntityManager<Product> productEntityManager = new EntityManager<>(connection);
-    //    Product song = new Product("willow", 1);
-    //    productEntityManager.persist(song);
+        Iterable<User> users = userEntityManager.find(User.class);
+        System.out.println(users.iterator().next());
+
+        //    EntityManager<Product> productEntityManager = new EntityManager<>(connection);
+        //    Product song = new Product("willow", 1);
+        //    productEntityManager.persist(song);
     }
 }
