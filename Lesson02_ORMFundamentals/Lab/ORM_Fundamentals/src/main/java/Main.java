@@ -1,4 +1,3 @@
-import entities.Product;
 import entities.User;
 import orm.EntityManager;
 import orm.MyConnector;
