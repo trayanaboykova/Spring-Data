@@ -19,6 +19,9 @@ public class User {
     @Column(name = "registration")
     private LocalDate registration;
 
+    @Column(name = "email")
+    private String email;
+
     public User() {}
 
     public User(String username, int age, LocalDate registration) {
@@ -49,6 +52,10 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public LocalDate getRegistration() {
