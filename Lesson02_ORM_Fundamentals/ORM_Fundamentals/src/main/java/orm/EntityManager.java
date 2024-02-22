@@ -19,10 +19,50 @@ public class EntityManager<E> implements DatabaseContext<E> {
     private static final String INSERT_TEMPLATE = "INSERT INTO %s (%s) VALUES (%s)";
     private static final String UPDATE_WITH_WHERE_TEMPLATE = "UPDATE %s SET %s WHERE %s";
     private static final String SELECT_WITH_WHERE_PLACEHOLDER_TEMPLATE = "SELECT %s FROM %s %s";
+    private static final String CREATE_TABLE_TEMPLATE = "CREATE TABLE %s(%s)";
     private final Connection connection;
 
     public EntityManager(Connection connection) {
         this.connection = connection;
+    }
+
+    @Override
+    public void doCreate(Class<E> entityClass) throws SQLException {
+        String tableName = getTableName(entityClass);
+        String sql = String.format(CREATE_TABLE_TEMPLATE,
+                tableName,
+                getAllFieldsAndDataTypes(entityClass));
+        this.connection.prepareStatement(sql).execute();
+    }
+
+    private String getAllFieldsAndDataTypes(Class<E> entityClass) {
+        List<String> dbColumns = new ArrayList<>();
+        Field[] declaredFields = entityClass.getDeclaredFields();
+        for (Field declaredField : declaredFields) {
+            StringBuilder sb = new StringBuilder(String.format("%s %s",
+                    getFieldName(declaredField),
+                    getFieldType(declaredField)));
+            if (declaredField.isAnnotationPresent(Id.class)) {
+                sb.append(" PRIMARY KEY AUTO_INCREMENT");
+            }
+            dbColumns.add(sb.toString());
+        }
+        return String.join(", ", dbColumns);
+    }
+
+    private String getFieldType(Field declaredField) {
+        return switch (declaredField.getType().getSimpleName()) {
+            case "int", "Integer" -> "INT";
+            case "long", "Long" -> "BIGINT";
+            case "String" -> "VARCHAR(255)";
+            case "double", "Double" -> "DOUBLE";
+            case "LocalDate" -> "DATE";
+            default -> "";
+        };
+    }
+
+    private String getFieldName(Field declaredField) {
+        return declaredField.getAnnotation(Column.class).name();
     }
 
     @Override
@@ -91,6 +131,7 @@ public class EntityManager<E> implements DatabaseContext<E> {
     public Iterable<E> find(Class<E> table) throws SQLException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         return find(table, null);
     }
+
     @Override
     public Iterable<E> find(Class<E> table, String where) throws SQLException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         return baseFind(table, where, null);
@@ -132,6 +173,7 @@ public class EntityManager<E> implements DatabaseContext<E> {
         }
         return result;
     }
+
     private E generateEntity(Class<E> table, ResultSet resultSet) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, SQLException {
         // Create object
         E result = table.getDeclaredConstructor().newInstance(); // new User(); new E();
