@@ -21,6 +21,16 @@ public class Main {
         MyConnector.createConnection(username, password, "mini_orm");
         Connection connection = MyConnector.getConnection();
 
+        //  EntityManager<User> userEntityManager = new EntityManager<>(connection);
+        //  User taylor = userEntityManager.findFirst(User.class);
+        //  userEntityManager.delete(taylor);
+
+        //  EntityManager<User> userEntityManager = new EntityManager<>(connection);
+        //  User taylor = new User("taylor", 33, LocalDate.now());
+        //  taylor.setEmail("taylornation@taylor.com");
+        //  userEntityManager.doAlter(taylor);
+        //  userEntityManager.persist(taylor);
+
         // EntityManager<User> userEntityManager = new EntityManager<>(connection);
         // userEntityManager.doCreate(User.class);
         // EntityManager<User> userEntityManager = new EntityManager<>(connection);
