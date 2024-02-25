@@ -1,7 +1,9 @@
 ### IntelliJ IDEA ###
-out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+out/
+.idea/
+DBAppsIntroduction_Lab.iml
 
 ### Eclipse ###
 .apt_generated
