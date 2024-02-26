@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .idea/
+IntroductionToHibernate_Exercise.iml
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
