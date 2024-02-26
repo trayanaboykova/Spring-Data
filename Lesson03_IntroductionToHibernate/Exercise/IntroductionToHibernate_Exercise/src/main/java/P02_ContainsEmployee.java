@@ -1,3 +1,5 @@
+import entities.Employee;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,8 +17,8 @@ public class P02_ContainsEmployee {
 
         String[] input = READER.readLine().split("\\s+");
 
-        List resultList = entityManager.createQuery(
-                        "FROM Employee  WHERE firstName = :first_name AND lastName = :last_name")
+        List<Employee>resultList = entityManager
+                .createQuery("FROM Employee  WHERE firstName = :first_name AND lastName = :last_name", Employee.class)
                 .setParameter("first_name", input[0])
                 .setParameter("last_name", input[1])
                 .getResultList();
