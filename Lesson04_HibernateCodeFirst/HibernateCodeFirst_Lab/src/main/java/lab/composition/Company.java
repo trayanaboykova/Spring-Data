@@ -2,6 +2,7 @@ package lab.composition;
 
 import jakarta.persistence.*;
 import lab.inheritance.Plane;
+import lab.inheritance.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,5 +21,34 @@ public class Company {
 
     public Company() {
         this.planes = new ArrayList<>();
+    }
+
+    public Company(String name) {
+        this();
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Plane> getPlanes() {
+        return planes;
+    }
+
+    public void setPlanes(List<Plane> planes) {
+        this.planes = planes;
     }
 }
