@@ -3,10 +3,10 @@ package inheritance.entities;
 import jakarta.persistence.*;
 
 @Entity
-
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Vehicle {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
     @Basic
