@@ -2,6 +2,7 @@ package lab.inheritance;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lab.composition.PlateNumber;
 
@@ -13,6 +14,7 @@ public class Car extends Vehicle {
     @Basic
     private int seats;
     @OneToOne
+    @JoinColumn(name = "plate_number_id", referencedColumnName = "id")
     private PlateNumber plateNumber;
 
     public Car() {}
