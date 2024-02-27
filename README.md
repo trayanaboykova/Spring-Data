@@ -9,7 +9,7 @@ Tasks from my course Spring Data at <a href="www.softuni.bg">SoftUni</a>
 
 **<ins>Introduction to Hibernate</ins>**: In this workshop, I explored the basics of modern Java application development, covering Maven, Hibernate, and the Java Persistence API (JPA). Maven helped me manage my projects smoothly by handling dependencies, while Hibernate simplified my database interactions by automating operations. I also learned about JPA, which provided a standardized way to work with databases, making them independent and scalable. Through practical examples, I gained the skills needed to develop efficient software solutions that connect Java objects with databases.
 
-
+**<ins>Hibernate Code First</ins>**: During the session, I learned about JPA inheritance strategies, essential for mapping entity data to the database. We discussed the javax.persistence.Inheritance annotation, which offers options like single table per class hierarchy, table per concrete entity class, and the "join" strategy. Additionally, we covered various types of database relationships, including one-to-one, one-to-many, many-to-one, many-to-many, and self-referencing relationships. Understanding these concepts is crucial for designing efficient database schemas and optimizing data retrieval operations.
 
 
 
