@@ -6,13 +6,8 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "vehicles")
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Vehicle {
-    @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private long id;
-    @Basic
-    private String type;
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Vehicle extends IdType{
     @Basic
     private String model;
     @Basic

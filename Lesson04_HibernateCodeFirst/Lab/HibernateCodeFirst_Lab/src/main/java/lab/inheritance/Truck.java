@@ -7,7 +7,6 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "trucks")
 public class Truck extends Vehicle {
     private static final String TRUCK_TYPE = "TRUCK";
     @Column(name = "load_capacity")
