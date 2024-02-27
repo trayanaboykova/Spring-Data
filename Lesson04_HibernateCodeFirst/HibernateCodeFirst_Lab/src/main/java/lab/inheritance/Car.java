@@ -1,9 +1,6 @@
 package lab.inheritance;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lab.composition.PlateNumber;
 
 import java.math.BigDecimal;
@@ -13,7 +10,7 @@ public class Car extends Vehicle {
     private static final String CAR_TYPE = "CAR";
     @Basic
     private int seats;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "plate_number_id", referencedColumnName = "id")
     private PlateNumber plateNumber;
 
