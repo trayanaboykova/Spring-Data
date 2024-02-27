@@ -1,13 +1,13 @@
-package inheritance;
+package inheritanceDemo;
 
-import inheritance.entities.Bike;
-import inheritance.entities.Car;
-import inheritance.entities.Vehicle;
+import inheritanceDemo.entities.BikeDemo;
+import inheritanceDemo.entities.CarDemo;
+import inheritanceDemo.entities.VehicleDemo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class Main {
+public class MainDemo {
     public static void main(String[] args) {
         EntityManagerFactory mainFactory =
                 Persistence.createEntityManagerFactory("main");
@@ -15,8 +15,8 @@ public class Main {
 
         entityManager.getTransaction().begin();
 
-        Vehicle car = new Car();
-        Vehicle bike = new Bike();
+        VehicleDemo car = new CarDemo();
+        VehicleDemo bike = new BikeDemo();
 
         entityManager.persist(car);
         entityManager.persist(bike);

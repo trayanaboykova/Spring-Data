@@ -1,16 +1,18 @@
-package inheritance.entities;
+package lab.inheritance;
 
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "bikes")
-@DiscriminatorValue("OurBike")
 public class Bike extends Vehicle {
     private static final String BIKE_TYPE = "BIKE";
     public Bike() {
-        super(BIKE_TYPE);
+    }
+
+    public Bike(String model, BigDecimal price, String fuelType) {
+        super(BIKE_TYPE, model, price, fuelType);
     }
 }

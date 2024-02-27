@@ -1,12 +1,12 @@
-package inheritance.entities;
+package inheritanceDemo.entities;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "vehicles")
+@Table(name = "vehicles_demo")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "our_type")
-public abstract class Vehicle {
+public abstract class VehicleDemo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -14,8 +14,8 @@ public abstract class Vehicle {
     @Basic
     private String type;
 
-    protected Vehicle() {}
-    protected Vehicle(String type) {
+    protected VehicleDemo() {}
+    protected VehicleDemo(String type) {
         this.type = type;
     }
 }
