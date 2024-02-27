@@ -18,7 +18,7 @@ public class Main {
 
         entityManager.getTransaction().begin();
 
-        // persistAll(entityManager);
+         persistAll(entityManager);
 
         // find(entityManager);
 
@@ -53,6 +53,6 @@ public class Main {
         entityManager.persist(bike);
         entityManager.persist(plane);
         entityManager.persist(truck);
-        entityManager.persist(plate);
+        
     }
 }
