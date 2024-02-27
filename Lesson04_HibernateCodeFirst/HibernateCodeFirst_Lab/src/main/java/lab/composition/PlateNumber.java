@@ -1,6 +1,7 @@
 package lab.composition;
 
 import jakarta.persistence.*;
+import lab.inheritance.Car;
 
 @Entity
 @Table(name = "plate_numbers")
@@ -10,6 +11,9 @@ public class PlateNumber {
     private long id;
 
     private String number;
+
+    @OneToOne(targetEntity = Car.class, mappedBy = "plateNumber")
+    private Car car;
 
     public PlateNumber() {}
 
