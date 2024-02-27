@@ -1,8 +1,8 @@
-package inheritanceDemo;
+package inheritance;
 
-import inheritanceDemo.entities.BikeDemo;
-import inheritanceDemo.entities.CarDemo;
-import inheritanceDemo.entities.VehicleDemo;
+import inheritance.entities.BikeDemo;
+import inheritance.entities.CarDemo;
+import inheritance.entities.VehicleDemo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

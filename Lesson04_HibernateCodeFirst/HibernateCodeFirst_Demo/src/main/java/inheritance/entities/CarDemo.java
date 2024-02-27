@@ -1,4 +1,4 @@
-package inheritanceDemo.entities;
+package inheritance.entities;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;

@@ -1,4 +1,5 @@
-package inheritanceDemo.entities;
+package inheritance.entities;
+
 
 import jakarta.persistence.*;
 
