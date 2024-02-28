@@ -53,6 +53,6 @@ public class Main {
         entityManager.persist(bike);
         entityManager.persist(plane);
         entityManager.persist(truck);
-        
+
     }
 }
