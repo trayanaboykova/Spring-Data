@@ -5,10 +5,10 @@ import jakarta.persistence.Persistence;
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("main");
-    //   EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-    //   entityManager.getTransaction().begin();
-    //
-    //   entityManager.getTransaction().commit();
+        entityManager.getTransaction().begin();
+
+        entityManager.getTransaction().commit();
     }
 }
