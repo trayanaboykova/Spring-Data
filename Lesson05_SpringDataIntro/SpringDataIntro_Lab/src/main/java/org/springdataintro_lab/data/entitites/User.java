@@ -1,4 +1,4 @@
-package org.data.entitites;
+package org.springdataintro_lab.data.entitites;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
