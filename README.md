@@ -11,5 +11,7 @@ Tasks from my course Spring Data at <a href="www.softuni.bg">SoftUni</a>
 
 **<ins>Hibernate Code First</ins>**: During the session, I learned about JPA inheritance strategies, essential for mapping entity data to the database. We discussed the javax.persistence.Inheritance annotation, which offers options like single table per class hierarchy, table per concrete entity class, and the "join" strategy. Additionally, we covered various types of database relationships, including one-to-one, one-to-many, many-to-one, many-to-many, and self-referencing relationships. Understanding these concepts is crucial for designing efficient database schemas and optimizing data retrieval operations.
 
+**<ins>Spring Data Intro</ins>**: Throughout the lesson, I explored the Spring ecosystem, beginning with an introduction to the Spring Platform. This covered various aspects such as Spring Projects, Spring Boot, and the core Spring Framework. As I progressed, I delved into the Spring Data Framework, understanding its significance in simplifying data access and management. I then learned about Spring Data Repositories, which proved invaluable for efficient data interaction. Furthermore, I mastered techniques for Spring Data Query Creation, enhancing my skills in database operations. Finally, I gained insights into Spring Data Services, equipping myself with the knowledge to build robust and scalable Java applications.
+
 
 
