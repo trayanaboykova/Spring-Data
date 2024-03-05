@@ -23,6 +23,12 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     public void run(String... args) throws Exception {
         seedData();
         getAllBooksAfterYear2000();
+        getAuthorsFirstAndLastNameBeforeBooks1990();
+    }
+
+    private void getAuthorsFirstAndLastNameBeforeBooks1990() {
+        this.authorService.getAllAuthorsFirstAndLastNameForBooksBeforeYear1990()
+                .forEach(System.out::println);
     }
 
     private void getAllBooksAfterYear2000() {
