@@ -49,7 +49,7 @@ public class Book extends BaseEntity {
         this.author = author;
         this.categories = categories;
     }
-    
+
     public String getTitle() {
         return title;
     }
