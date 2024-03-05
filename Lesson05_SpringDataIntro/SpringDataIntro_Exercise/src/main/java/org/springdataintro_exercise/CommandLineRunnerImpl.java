@@ -4,9 +4,10 @@ import org.springdataintro_exercise.service.AuthorService;
 import org.springdataintro_exercise.service.BookService;
 import org.springdataintro_exercise.service.CategoryService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-
+@Component
 public class CommandLineRunnerImpl implements CommandLineRunner {
     private final AuthorService authorService;
     private final CategoryService categoryService;
