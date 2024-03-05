@@ -45,7 +45,7 @@ public class BookServiceImpl implements BookService {
                     .forEach(row -> {
                         String[] data = row.split("\\s+");
 
-                        Author author = authorService.getRandomAuthor();
+                        Author author = this.authorService.getRandomAuthor();
                         EditionType editionType = EditionType.values()[Integer.parseInt(data[0])];
                         LocalDate releaseDate = LocalDate.parse(data[1],
                                 DateTimeFormatter.ofPattern("d/M/yyyy"));
@@ -56,7 +56,7 @@ public class BookServiceImpl implements BookService {
                         String title = Arrays.stream(data)
                                 .skip(5)
                                 .collect(Collectors.joining(" "));
-                        Set<Category> categories = categoryService.getRandomCategories();
+                        Set<Category> categories = this.categoryService.getRandomCategories();
 
 
                         Book book = new Book(title, editionType, price, copies, releaseDate,
