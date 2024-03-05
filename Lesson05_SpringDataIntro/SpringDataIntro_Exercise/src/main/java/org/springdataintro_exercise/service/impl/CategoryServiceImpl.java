@@ -23,13 +23,14 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
 
-
     @Override
     public void seedCategories() throws IOException {
-        Files.readAllLines(Path.of(FILE_PATH))
-                .stream()
-                .filter(row -> !row.isEmpty())
-                .forEach(row -> this.categoryRepository.saveAndFlush(new Category(row)));
+        if (this.categoryRepository.count() == 0) {
+            Files.readAllLines(Path.of(FILE_PATH))
+                    .stream()
+                    .filter(row -> !row.isEmpty())
+                    .forEach(row -> this.categoryRepository.saveAndFlush(new Category(row)));
+        }
     }
 
     @Override
