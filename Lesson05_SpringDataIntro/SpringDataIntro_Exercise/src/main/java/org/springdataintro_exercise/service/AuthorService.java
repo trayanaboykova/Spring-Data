@@ -12,4 +12,5 @@ public interface AuthorService {
 
     List<String> getAllAuthorsFirstAndLastNameForBooksBeforeYear1990();
 
+    List<String> getAllAuthorsDescBooks();
 }

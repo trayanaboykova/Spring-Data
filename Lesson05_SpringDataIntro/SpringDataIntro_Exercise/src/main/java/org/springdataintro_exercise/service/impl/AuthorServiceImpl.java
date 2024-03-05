@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
@@ -49,6 +50,15 @@ public class AuthorServiceImpl implements AuthorService {
         return this.authorRepository.findAllByBooksReleaseDateBefore(LocalDate.of(1990, 1, 1))
                 .stream()
                 .map(author -> String.format("%s %s", author.getFirstName(), author.getLastName()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getAllAuthorsDescBooks() {
+        Set<Author> allByOrderByBooksDesc = this.authorRepository.findAllByOrderByBooksSizeDesc();
+
+        return allByOrderByBooksDesc.stream()
+                .map(a -> String.format("%s %s %d", a.getFirstName(), a.getLastName(), a.getBooks().size()))
                 .collect(Collectors.toList());
     }
 }

@@ -24,6 +24,18 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         seedData();
         getAllBooksAfterYear2000();
         getAuthorsFirstAndLastNameBeforeBooks1990();
+        getAllAuthorsByBooksDesc();
+        printBooksByGeorgePowell();
+    }
+
+    private void printBooksByGeorgePowell() {
+        this.bookService.findAllByBooksByGeorgePowellOrdered()
+                .forEach(System.out::println);
+    }
+
+    private void getAllAuthorsByBooksDesc() {
+        this.authorService.getAllAuthorsDescBooks()
+                .forEach(System.out::println);
     }
 
     private void getAuthorsFirstAndLastNameBeforeBooks1990() {
