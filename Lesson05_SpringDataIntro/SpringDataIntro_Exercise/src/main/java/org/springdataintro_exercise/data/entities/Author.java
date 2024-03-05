@@ -3,6 +3,7 @@ package org.springdataintro_exercise.data.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import org.springdataintro_exercise.data.entities.base.BaseEntity;
 
 @Entity
 @Table(name = "authors")
