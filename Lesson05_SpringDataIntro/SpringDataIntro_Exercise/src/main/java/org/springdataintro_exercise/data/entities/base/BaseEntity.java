@@ -1,4 +1,4 @@
-package org.springdataintro_exercise.data.entities;
+package org.springdataintro_exercise.data.entities.base;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

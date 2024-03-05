@@ -1,6 +1,9 @@
 package org.springdataintro_exercise.data.entities;
 
 import jakarta.persistence.*;
+import org.springdataintro_exercise.data.entities.base.BaseEntity;
+import org.springdataintro_exercise.data.entities.enums.AgeRestriction;
+import org.springdataintro_exercise.data.entities.enums.EditionType;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,7 +14,7 @@ import java.util.Set;
 public class Book extends BaseEntity {
     @Column(length = 50, nullable = false)
     private String title;
-    @Column(length = 1000, nullable = false)
+    @Column(length = 1000)
     private String description;
     @Enumerated(value = EnumType.STRING)
     private EditionType editionType;
@@ -33,6 +36,9 @@ public class Book extends BaseEntity {
     inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
     private Set<Category> categories;
 
+    public Book() {
+
+    }
     public Book(String title, EditionType editionType, BigDecimal price, int copies, LocalDate releaseDate, AgeRestriction ageRestriction, Author author, Set<Category> categories) {
         this.title = title;
         this.editionType = editionType;
@@ -43,7 +49,7 @@ public class Book extends BaseEntity {
         this.author = author;
         this.categories = categories;
     }
-
+    
     public String getTitle() {
         return title;
     }
