@@ -1,6 +1,5 @@
 package org.springdataintro_exercise.service.impl;
 
-import org.springdataintro_exercise.data.entities.Author;
 import org.springdataintro_exercise.data.entities.Category;
 import org.springdataintro_exercise.data.repositories.CategoryRepository;
 import org.springdataintro_exercise.service.CategoryService;
