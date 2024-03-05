@@ -38,31 +38,33 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void seedBooks() throws IOException {
-        Files.readAllLines(Path.of(FILE_PATH))
-                .stream()
-                .filter(row -> !row.isEmpty())
-                .forEach(row -> {
-                    String[] data = row.split("\\s+");
+        if (this.bookRepository.count() == 0) {
+            Files.readAllLines(Path.of(FILE_PATH))
+                    .stream()
+                    .filter(row -> !row.isEmpty())
+                    .forEach(row -> {
+                        String[] data = row.split("\\s+");
 
-                    Author author = authorService.getRandomAuthor();
-                    EditionType editionType = EditionType.values()[Integer.parseInt(data[0])];
-                    LocalDate releaseDate = LocalDate.parse(data[1],
-                            DateTimeFormatter.ofPattern("d/M/yyyy"));
-                    int copies = Integer.parseInt(data[2]);
-                    BigDecimal price = new BigDecimal(data[3]);
-                    AgeRestriction ageRestriction = AgeRestriction
-                            .values()[Integer.parseInt(data[4])];
-                    String title = Arrays.stream(data)
-                            .skip(5)
-                            .collect(Collectors.joining(" "));
-                    Set<Category> categories = categoryService.getRandomCategories();
+                        Author author = authorService.getRandomAuthor();
+                        EditionType editionType = EditionType.values()[Integer.parseInt(data[0])];
+                        LocalDate releaseDate = LocalDate.parse(data[1],
+                                DateTimeFormatter.ofPattern("d/M/yyyy"));
+                        int copies = Integer.parseInt(data[2]);
+                        BigDecimal price = new BigDecimal(data[3]);
+                        AgeRestriction ageRestriction = AgeRestriction
+                                .values()[Integer.parseInt(data[4])];
+                        String title = Arrays.stream(data)
+                                .skip(5)
+                                .collect(Collectors.joining(" "));
+                        Set<Category> categories = categoryService.getRandomCategories();
 
 
-                    Book book = new Book(title, editionType, price, copies, releaseDate,
-                            ageRestriction, author, categories);
+                        Book book = new Book(title, editionType, price, copies, releaseDate,
+                                ageRestriction, author, categories);
 
-                    this.bookRepository.saveAndFlush(book);
+                        this.bookRepository.saveAndFlush(book);
 
-                });
+                    });
+        }
     }
 }
