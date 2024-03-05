@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Service
 public class AuthorServiceImpl implements AuthorService {
@@ -39,5 +42,13 @@ public class AuthorServiceImpl implements AuthorService {
                 .current()
                 .nextInt(1, (int) this.authorRepository.count() + 1);
         return this.authorRepository.findById(randomId).get();
+    }
+
+    @Override
+    public List<String> getAllAuthorsFirstAndLastNameForBooksBeforeYear1990() {
+        return this.authorRepository.findAllByBooksReleaseDateBefore(LocalDate.of(1990, 1, 1))
+                .stream()
+                .map(author -> String.format("%s %s", author.getFirstName(), author.getLastName()))
+                .collect(Collectors.toList());
     }
 }
