@@ -32,7 +32,8 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Author getRandomAuthor() {
-        int randomId = ThreadLocalRandom.current()
+        int randomId = ThreadLocalRandom
+                .current()
                 .nextInt(1, (int) this.authorRepository.count() + 1);
         return this.authorRepository.findById(randomId).get();
     }
