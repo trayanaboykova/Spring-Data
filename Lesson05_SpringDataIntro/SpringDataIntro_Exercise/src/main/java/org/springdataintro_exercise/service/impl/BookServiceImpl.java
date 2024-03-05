@@ -18,6 +18,7 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -66,5 +67,13 @@ public class BookServiceImpl implements BookService {
 
                     });
         }
+    }
+
+    @Override
+    public List<String> findAllBooksAfterYear2000() {
+        return this.bookRepository.findAllByReleaseDateAfter(LocalDate.of(2000, 12, 31))
+                .stream()
+                .map(Book::getTitle)
+                .collect(Collectors.toList());
     }
 }
