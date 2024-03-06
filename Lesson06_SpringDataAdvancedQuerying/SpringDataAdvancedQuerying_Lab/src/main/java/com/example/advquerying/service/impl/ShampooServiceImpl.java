@@ -58,6 +58,11 @@ public class ShampooServiceImpl implements ShampooService {
     }
 
     @Override
+    public int countOfShampoosWithPriceLesserThan(BigDecimal price) {
+        return this.shampooRepository.findAllByPriceLessThan(price).size();
+    }
+
+    @Override
     public List<String> getAllShampoosContainingIngredient(List<String> strings) {
         Set<Shampoo> allByIngredientsNameIn = this.shampooRepository.findAllByIngredientsNameIn(strings);
 
@@ -65,5 +70,13 @@ public class ShampooServiceImpl implements ShampooService {
                 .stream()
                 .map(Shampoo::getBrand)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Set<String> getAllShampoosWithCountOfIngredientsBelowNumber() {
+        return this.shampooRepository.findAllWithIngredientsCountLesserThan(2)
+                .stream()
+                .map(Shampoo::getBrand)
+                .collect(Collectors.toSet());
     }
 }

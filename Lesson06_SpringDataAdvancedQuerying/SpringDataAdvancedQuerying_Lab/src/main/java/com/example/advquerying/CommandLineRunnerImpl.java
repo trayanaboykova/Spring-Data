@@ -51,11 +51,23 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         //          .forEach(System.out::println);
 
         // COUNT SHAMPOOS BY PRICE
+        // System.out.println(this.shampooService.countOfShampoosWithPriceLesserThan(BigDecimal.valueOf(8.5)));
 
         // SELECT SHAMPOOS BY INGREDIENTS
         // this.shampooService.getAllShampoosContainingIngredient(List.of(reader.readLine().split(" ")))
         //         .forEach(System.out::println);
 
+        // SELECT SHAMPOOS BY INGREDIENTS COUNT
+        // System.out.println(this.shampooService.getAllShampoosWithCountOfIngredientsBelowNumber());
+
+        // DELETE INGREDIENTS BY NAME
+        // System.out.println(this.ingredientService.deleteIngredientByName("Nettle"));
+
+        // UPDATE INGREDIENTS BY PRICE
+        // this.ingredientService.updatedIngredientPrices();
+
+        // UPDATE INGREDIENTS BY NAMES
+        // this.ingredientService.updatePricesForGivenNames();
 
     }
 }
