@@ -14,6 +14,5 @@ public interface ShampooRepository extends JpaRepository<Shampoo, Long> {
     Set<Shampoo> findAllBySizeOrderById(Size size);
     Set<Shampoo> findAllBySizeOrLabelIdOrderByPrice(Size size, long id);
     Set<Shampoo> findAllByPriceGreaterThanOrderByPriceDesc(BigDecimal price);
-
     Set<Shampoo> findAllByIngredientsNameIn(List<String> names);
 }
