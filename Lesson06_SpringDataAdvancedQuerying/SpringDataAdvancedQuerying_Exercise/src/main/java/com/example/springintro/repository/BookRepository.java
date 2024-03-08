@@ -37,5 +37,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Query("SELECT COUNT(b) FROM Book b WHERE LENGTH(b.title) > :min")
     int countByTitleLengthGreaterThan(int min);
 
-    Book findByTitle(String title);
+    BookInfo findByTitle(String title);
 }

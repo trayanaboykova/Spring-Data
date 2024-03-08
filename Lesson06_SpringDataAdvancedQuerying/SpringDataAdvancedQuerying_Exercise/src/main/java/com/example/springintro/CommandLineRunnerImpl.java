@@ -3,6 +3,7 @@ package com.example.springintro;
 import com.example.springintro.model.entity.AgeRestriction;
 import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.EditionType;
+import com.example.springintro.repository.BookInfo;
 import com.example.springintro.service.AuthorService;
 import com.example.springintro.service.BookService;
 import com.example.springintro.service.CategoryService;
@@ -62,10 +63,10 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printTotalBookCopiesForAuthor();
 
         // REDUCED BOOK
-        printBookProjection();
+        // printBookProjection();
 
         // INCREASE BOOK COPIES
-
+        
 
         // REMOVE BOOKS
 
@@ -79,7 +80,8 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
         String title = scanner.nextLine();
 
-        bookService.findInfoByTitle(title);
+        BookInfo info = bookService.findInfoByTitle(title);
+        System.out.println(info);
     }
 
     private void printTotalBookCopiesForAuthor() {

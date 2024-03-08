@@ -1,6 +1,7 @@
 package com.example.springintro.service.impl;
 
 import com.example.springintro.model.entity.*;
+import com.example.springintro.repository.BookInfo;
 import com.example.springintro.repository.BookRepository;
 import com.example.springintro.service.AuthorService;
 import com.example.springintro.service.BookService;
@@ -139,8 +140,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public String findInfoByTitle(String title) {
-        return null;
+    public BookInfo findInfoByTitle(String title) {
+        return bookRepository.findByTitle(title);
     }
 
     private Book createBookFromInfo(String[] bookInfo) {

@@ -3,6 +3,7 @@ package com.example.springintro.service;
 import com.example.springintro.model.entity.AgeRestriction;
 import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.EditionType;
+import com.example.springintro.repository.BookInfo;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -33,7 +34,7 @@ public interface BookService {
 
     int findTitleCountLongerThan(int minLength);
 
-    String findInfoByTitle(String title);
+    BookInfo findInfoByTitle(String title);
 }
 
 
