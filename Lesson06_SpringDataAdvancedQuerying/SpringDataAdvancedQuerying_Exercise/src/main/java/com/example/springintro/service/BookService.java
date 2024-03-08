@@ -1,6 +1,8 @@
 package com.example.springintro.service;
 
+import com.example.springintro.model.entity.AgeRestriction;
 import com.example.springintro.model.entity.Book;
+import com.example.springintro.model.entity.EditionType;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,4 +16,9 @@ public interface BookService {
 
     List<String> findAllBooksByAuthorFirstAndLastNameOrderByReleaseDate(String firstName, String lastName);
 
+    List<String> findAllByAgeRestriction(AgeRestriction ageRestriction);
+
+    List<String> findAllByEditionAndCopies(EditionType editionType, int i);
 }
+
+

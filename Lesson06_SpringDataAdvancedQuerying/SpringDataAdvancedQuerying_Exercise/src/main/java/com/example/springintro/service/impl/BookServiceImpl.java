@@ -79,6 +79,22 @@ public class BookServiceImpl implements BookService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<String> findAllByAgeRestriction(AgeRestriction restriction) {
+        return bookRepository.findAllByAgeRestriction(restriction)
+                .stream()
+                .map(Book::getTitle)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> findAllByEditionAndCopies(EditionType type, int copies) {
+        return bookRepository.findAllByEditionTypeAndCopiesLessThan(type, copies)
+                .stream()
+                .map(Book::getTitle)
+                .toList();
+    }
+
     private Book createBookFromInfo(String[] bookInfo) {
         EditionType editionType = EditionType.values()[Integer.parseInt(bookInfo[0])];
         LocalDate releaseDate = LocalDate
