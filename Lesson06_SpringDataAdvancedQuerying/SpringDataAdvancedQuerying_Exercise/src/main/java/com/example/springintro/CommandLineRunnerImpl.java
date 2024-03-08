@@ -39,7 +39,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printBooksWithPriceOutOfRange();
 
         // NOT RELEASED BOOKS
-
+        // printBooksNotIssuedAt();
 
         // BOOKS RELEASED BEFORE DATE
 
@@ -65,6 +65,12 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printAllAuthorsAndNumberOfTheirBooks();
         // printALlBooksByAuthorNameOrderByReleaseDate("George", "Powell");
 
+    }
+
+    private void printBooksNotIssuedAt() {
+        List<String> titles = bookService.findTtitlesForBooksNotPublishedIn(2000);
+
+        titles.forEach(System.out::println);
     }
 
     private void printBooksWithPriceOutOfRange() {

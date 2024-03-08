@@ -69,7 +69,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<String> findAllBooksByAuthorFirstAndLastNameOrderByReleaseDate(String firstName, String lastName) {
-       return bookRepository
+        return bookRepository
                 .findAllByAuthor_FirstNameAndAuthor_LastNameOrderByReleaseDateDescTitle(firstName, lastName)
                 .stream()
                 .map(book -> String.format("%s %s %d",
@@ -100,6 +100,16 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAllByPriceLessThanOrPriceGreaterThan(
                 BigDecimal.valueOf(lowerBound),
                 BigDecimal.valueOf(upperBound));
+    }
+
+    @Override
+    public List<String> findTtitlesForBooksNotPublishedIn(int year) {
+        return bookRepository.findAllByReleaseDateLessThanOrReleaseDateGreaterThan(
+                        LocalDate.of(year, 1, 1),
+                        LocalDate.of(year, 12, 31)
+                ).stream()
+                .map(Book::getTitle)
+                .collect(Collectors.toList());
     }
 
     private Book createBookFromInfo(String[] bookInfo) {

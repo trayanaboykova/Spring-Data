@@ -21,6 +21,8 @@ public interface BookService {
     List<String> findTitlesByEditionAndCopies(EditionType editionType, int i);
 
     List<Book> findAllBooksWithPriceOutsideOf(int lowerBound, int upperBound);
+
+    List<String> findTtitlesForBooksNotPublishedIn(int year);
 }
 
 
