@@ -5,6 +5,7 @@ import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.EditionType;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public interface BookService {
@@ -22,7 +23,10 @@ public interface BookService {
 
     List<Book> findAllBooksWithPriceOutsideOf(int lowerBound, int upperBound);
 
-    List<String> findTtitlesForBooksNotPublishedIn(int year);
+    List<String> findTitlesForBooksNotPublishedIn(int year);
+
+    List<Book> findAllReleasedBefore(LocalDate date);
+
 }
 
 

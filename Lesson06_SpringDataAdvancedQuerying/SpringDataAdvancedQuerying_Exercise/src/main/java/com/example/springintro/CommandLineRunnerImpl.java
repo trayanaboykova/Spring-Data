@@ -10,6 +10,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,7 +44,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printBooksNotIssuedAt();
 
         // BOOKS RELEASED BEFORE DATE
-
+        // printBookInfoForBooksReleasedBefore();
 
         // AUTHORS SEARCH
 
@@ -59,16 +61,22 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // REDUCED BOOK
 
 
-        // OTHER
-        // printAllBooksAfterYear(2000);
-        // printAllAuthorsNamesWithBooksWithReleaseDateBeforeYear(1990);
-        // printAllAuthorsAndNumberOfTheirBooks();
-        // printALlBooksByAuthorNameOrderByReleaseDate("George", "Powell");
+    }
 
+    private void printBookInfoForBooksReleasedBefore() {
+        Scanner scanner = new Scanner(System.in);
+        String beforeDate = scanner.nextLine();
+        LocalDate parsedDate = LocalDate.parse(beforeDate, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+        List<Book> books = bookService.findAllReleasedBefore(parsedDate);
+        books.forEach(b -> System.out.printf("%s %s $%.2f%n",
+                b.getTitle(),
+                b.getEditionType(),
+                b.getPrice()));
     }
 
     private void printBooksNotIssuedAt() {
-        List<String> titles = bookService.findTtitlesForBooksNotPublishedIn(2000);
+        List<String> titles = bookService.findTitlesForBooksNotPublishedIn(2000);
 
         titles.forEach(System.out::println);
     }
@@ -97,32 +105,6 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         } catch (IllegalArgumentException ex) {
             System.out.println("Wrong age category");
         }
-    }
-
-    private void printALlBooksByAuthorNameOrderByReleaseDate(String firstName, String lastName) {
-        bookService
-                .findAllBooksByAuthorFirstAndLastNameOrderByReleaseDate(firstName, lastName)
-                .forEach(System.out::println);
-    }
-
-    private void printAllAuthorsAndNumberOfTheirBooks() {
-        authorService
-                .getAllAuthorsOrderByCountOfTheirBooks()
-                .forEach(System.out::println);
-    }
-
-    private void printAllAuthorsNamesWithBooksWithReleaseDateBeforeYear(int year) {
-        bookService
-                .findAllAuthorsWithBooksWithReleaseDateBeforeYear(year)
-                .forEach(System.out::println);
-    }
-
-    private void printAllBooksAfterYear(int year) {
-        bookService
-                .findAllBooksAfterYear(year)
-                .stream()
-                .map(Book::getTitle)
-                .forEach(System.out::println);
     }
 
     private void seedData() throws IOException {
