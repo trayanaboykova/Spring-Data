@@ -88,11 +88,18 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<String> findAllByEditionAndCopies(EditionType type, int copies) {
+    public List<String> findTitlesByEditionAndCopies(EditionType type, int copies) {
         return bookRepository.findAllByEditionTypeAndCopiesLessThan(type, copies)
                 .stream()
                 .map(Book::getTitle)
                 .toList();
+    }
+
+    @Override
+    public List<Book> findAllBooksWithPriceOutsideOf(int lowerBound, int upperBound) {
+        return bookRepository.findAllByPriceLessThanOrPriceGreaterThan(
+                BigDecimal.valueOf(lowerBound),
+                BigDecimal.valueOf(upperBound));
     }
 
     private Book createBookFromInfo(String[] bookInfo) {

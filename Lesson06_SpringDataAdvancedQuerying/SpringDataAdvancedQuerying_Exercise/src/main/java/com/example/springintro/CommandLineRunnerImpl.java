@@ -33,10 +33,10 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printBooksByAgeRestriction();
 
         // GOLDEN BOOKS
-        printGoldenBooksWithLessThan5000Copies();
+        // printGoldenBooksWithLessThan5000Copies();
 
         // BOOKS BY PRICE
-
+        // printBooksWithPriceOutOfRange();
 
         // NOT RELEASED BOOKS
 
@@ -67,8 +67,14 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
     }
 
+    private void printBooksWithPriceOutOfRange() {
+        List<Book> books = bookService.findAllBooksWithPriceOutsideOf(5, 40);
+
+        books.forEach(b -> System.out.printf("%s $%.2f%n", b.getTitle(), b.getPrice()));
+    }
+
     private void printGoldenBooksWithLessThan5000Copies() {
-        List<String> titles = bookService.findAllByEditionAndCopies(EditionType.GOLD, 5000);
+        List<String> titles = bookService.findTitlesByEditionAndCopies(EditionType.GOLD, 5000);
 
         for (String t : titles) {
             System.out.println(t);
@@ -85,9 +91,6 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         } catch (IllegalArgumentException ex) {
             System.out.println("Wrong age category");
         }
-
-
-
     }
 
     private void printALlBooksByAuthorNameOrderByReleaseDate(String firstName, String lastName) {

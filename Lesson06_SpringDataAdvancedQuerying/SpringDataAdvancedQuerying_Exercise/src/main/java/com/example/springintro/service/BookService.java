@@ -18,7 +18,9 @@ public interface BookService {
 
     List<String> findAllByAgeRestriction(AgeRestriction ageRestriction);
 
-    List<String> findAllByEditionAndCopies(EditionType editionType, int i);
+    List<String> findTitlesByEditionAndCopies(EditionType editionType, int i);
+
+    List<Book> findAllBooksWithPriceOutsideOf(int lowerBound, int upperBound);
 }
 
 
