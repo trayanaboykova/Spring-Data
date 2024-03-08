@@ -4,9 +4,11 @@ import com.example.springintro.model.entity.AgeRestriction;
 import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.EditionType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -38,4 +40,12 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     int countByTitleLengthGreaterThan(int min);
 
     BookInfo findByTitle(String title);
+
+    @Query("UPDATE Book b " +
+            "SET b.copies = b.copies + :additionalCopies " +
+            "WHERE b.id = :id")
+    @Modifying
+    @Transactional
+    int updateBookCopies(int id, int additionalCopies);
+
 }

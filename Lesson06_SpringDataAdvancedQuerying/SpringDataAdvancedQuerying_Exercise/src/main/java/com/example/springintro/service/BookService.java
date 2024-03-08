@@ -35,6 +35,8 @@ public interface BookService {
     int findTitleCountLongerThan(int minLength);
 
     BookInfo findInfoByTitle(String title);
+
+    void sellCopies(int bookId, int copiesSold);
 }
 
 

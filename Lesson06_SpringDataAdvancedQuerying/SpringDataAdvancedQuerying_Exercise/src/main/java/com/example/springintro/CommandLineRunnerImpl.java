@@ -66,7 +66,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printBookProjection();
 
         // INCREASE BOOK COPIES
-        
+        // updateBookCopies();
 
         // REMOVE BOOKS
 
@@ -74,6 +74,10 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // STORED PROCEDURE
 
 
+    }
+
+    private void updateBookCopies() {
+        bookService.sellCopies(1, 1200);
     }
 
     private void printBookProjection() {

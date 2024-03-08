@@ -144,6 +144,11 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findByTitle(title);
     }
 
+    @Override
+    public void sellCopies(int bookId, int copiesSold) {
+        bookRepository.updateBookCopies(bookId, copiesSold);
+    }
+
     private Book createBookFromInfo(String[] bookInfo) {
         EditionType editionType = EditionType.values()[Integer.parseInt(bookInfo[0])];
         LocalDate releaseDate = LocalDate
