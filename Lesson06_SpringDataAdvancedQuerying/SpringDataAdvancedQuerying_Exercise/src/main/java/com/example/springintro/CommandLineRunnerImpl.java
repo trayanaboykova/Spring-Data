@@ -47,20 +47,82 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         // printBookInfoForBooksReleasedBefore();
 
         // AUTHORS SEARCH
+        // printAuthorsEndingIn();
 
+        // BOOKS SEARCH
+        // printBookTitlesContaining();
 
         // BOOK TITLES SEARCH
-
+        // findAllBooksByLastNameStarting();
 
         // COUNT BOOKS
-
+        // findStatsForTitleLength();
 
         // TOTAL BOOK COPIES
-
+        // printTotalBookCopiesForAuthor();
 
         // REDUCED BOOK
+        printBookProjection();
+
+        // INCREASE BOOK COPIES
 
 
+        // REMOVE BOOKS
+
+
+        // STORED PROCEDURE
+
+
+    }
+
+    private void printBookProjection() {
+        Scanner scanner = new Scanner(System.in);
+        String title = scanner.nextLine();
+
+        bookService.findInfoByTitle(title);
+    }
+
+    private void printTotalBookCopiesForAuthor() {
+        Scanner scanner = new Scanner(System.in);
+        String[] authorNames = scanner.nextLine().split(" ");
+
+       int count = authorService.getTotalCopiesCountFor(authorNames[0], authorNames[1]);
+
+        System.out.printf("%s %s %d", authorNames[0], authorNames[1], count);
+    }
+
+    private void findStatsForTitleLength() {
+        Scanner scanner = new Scanner(System.in);
+        int minLength = Integer.parseInt(scanner.nextLine());
+
+        int count = bookService.findTitleCountLongerThan(minLength);
+
+        System.out.printf("There are %d books with longer titles than %d symbols", count, minLength);
+    }
+
+    private void findAllBooksByLastNameStarting() {
+        Scanner scanner = new Scanner(System.in);
+        String lastNameStart = scanner.nextLine();
+
+        bookService.findTitlesForAuthorNameStartingWith(lastNameStart);
+    }
+
+    private void printBookTitlesContaining() {
+        Scanner scanner = new Scanner(System.in);
+        String needle = scanner.nextLine();
+
+        List<String> titles = bookService.findTitlesContaining(needle);
+
+        titles.forEach(System.out::println);
+    }
+
+    private void printAuthorsEndingIn() {
+        Scanner scanner = new Scanner(System.in);
+        String ending = scanner.nextLine();
+
+        List<String> names = authorService.findAllNamesEndingIn(ending);
+
+        names.forEach(System.out::println);
     }
 
     private void printBookInfoForBooksReleasedBefore() {

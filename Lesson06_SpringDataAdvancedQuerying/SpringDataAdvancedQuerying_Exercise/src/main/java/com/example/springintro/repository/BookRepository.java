@@ -4,6 +4,7 @@ import com.example.springintro.model.entity.AgeRestriction;
 import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.EditionType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
@@ -28,4 +29,13 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findAllByReleaseDateLessThanOrReleaseDateGreaterThan(LocalDate start, LocalDate end);
 
     List<Book> findAllByReleaseDateLessThan(LocalDate date);
+
+    List<Book> findAllByTitleContaining(String needle);
+
+    List<Book> findAllByAuthorLastNameStartingWith(String name);
+
+    @Query("SELECT COUNT(b) FROM Book b WHERE LENGTH(b.title) > :min")
+    int countByTitleLengthGreaterThan(int min);
+
+    Book findByTitle(String title);
 }

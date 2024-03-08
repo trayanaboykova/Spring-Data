@@ -117,6 +117,32 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAllByReleaseDateBefore(date);
     }
 
+    @Override
+    public List<String> findTitlesContaining(String needle) {
+        return bookRepository.findAllByTitleContaining(needle)
+                .stream()
+                .map(Book::getTitle)
+                .toList();
+    }
+
+    @Override
+    public List<String> findTitlesForAuthorNameStartingWith(String lastNameStart) {
+        return bookRepository.findAllByAuthorLastNameStartingWith(lastNameStart)
+                .stream()
+                .map(Book::getTitle)
+                .toList();
+    }
+
+    @Override
+    public int findTitleCountLongerThan(int minLength) {
+        return bookRepository.countByTitleLengthGreaterThan(minLength);
+    }
+
+    @Override
+    public String findInfoByTitle(String title) {
+        return null;
+    }
+
     private Book createBookFromInfo(String[] bookInfo) {
         EditionType editionType = EditionType.values()[Integer.parseInt(bookInfo[0])];
         LocalDate releaseDate = LocalDate

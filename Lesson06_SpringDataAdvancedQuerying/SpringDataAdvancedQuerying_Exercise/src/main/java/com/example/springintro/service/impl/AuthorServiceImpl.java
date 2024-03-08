@@ -61,4 +61,17 @@ public class AuthorServiceImpl implements AuthorService {
                         author.getBooks().size()))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<String> findAllNamesEndingIn(String ending) {
+       return authorRepository.findAllByFirstNameEndingWith(ending)
+               .stream()
+               .map(a -> a.getFirstName() + " " + a.getLastName())
+               .toList();
+    }
+
+    @Override
+    public int getTotalCopiesCountFor(String firstName, String lastName) {
+        return authorRepository.countBookCopiesByAuthorName(firstName, lastName);
+    }
 }

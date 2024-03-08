@@ -27,6 +27,13 @@ public interface BookService {
 
     List<Book> findAllReleasedBefore(LocalDate date);
 
+    List<String> findTitlesContaining(String needle);
+
+    List<String> findTitlesForAuthorNameStartingWith(String lastNameStart);
+
+    int findTitleCountLongerThan(int minLength);
+
+    String findInfoByTitle(String title);
 }
 
 
