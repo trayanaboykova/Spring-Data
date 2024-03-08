@@ -26,14 +26,14 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     public void run(String... args) throws Exception {
         seedData();
 
-        //printAllBooksAfterYear(2000);
-//        printAllAuthorsNamesWithBooksWithReleaseDateBeforeYear(1990);
-     //   printAllAuthorsAndNumberOfTheirBooks();
-        pritnALlBooksByAuthorNameOrderByReleaseDate("George", "Powell");
+        // printAllBooksAfterYear(2000);
+        // printAllAuthorsNamesWithBooksWithReleaseDateBeforeYear(1990);
+        // printAllAuthorsAndNumberOfTheirBooks();
+        // printALlBooksByAuthorNameOrderByReleaseDate("George", "Powell");
 
     }
 
-    private void pritnALlBooksByAuthorNameOrderByReleaseDate(String firstName, String lastName) {
+    private void printALlBooksByAuthorNameOrderByReleaseDate(String firstName, String lastName) {
         bookService
                 .findAllBooksByAuthorFirstAndLastNameOrderByReleaseDate(firstName, lastName)
                 .forEach(System.out::println);
