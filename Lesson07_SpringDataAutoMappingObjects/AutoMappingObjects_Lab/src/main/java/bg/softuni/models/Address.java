@@ -17,10 +17,41 @@ public class Address {
     public Address() {
     }
 
-    public Address(int id, String country, String city, String streetName) {
-        this.id = id;
+    public Address(String country, String city, String streetName) {
         this.country = country;
         this.city = city;
+        this.streetName = streetName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
         this.streetName = streetName;
     }
 }
