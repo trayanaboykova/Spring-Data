@@ -55,4 +55,8 @@ public class User extends BaseEntity {
     public void setAdmin(boolean admin) {
         isAdmin = admin;
     }
+
+    public Set<Game> getGames() {
+        return games;
+    }
 }

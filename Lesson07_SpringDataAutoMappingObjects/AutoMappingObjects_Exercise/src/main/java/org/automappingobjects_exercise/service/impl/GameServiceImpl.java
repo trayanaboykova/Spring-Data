@@ -4,6 +4,7 @@ import jakarta.validation.ConstraintViolation;
 import org.automappingobjects_exercise.data.entities.Game;
 import org.automappingobjects_exercise.data.repositories.GameRepository;
 import org.automappingobjects_exercise.service.GameService;
+import org.automappingobjects_exercise.service.dto.AllGamesDTO;
 import org.automappingobjects_exercise.service.dto.GameAddDTO;
 import org.automappingobjects_exercise.util.ValidationService;
 import org.modelmapper.ModelMapper;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -75,5 +77,20 @@ public class GameServiceImpl implements GameService {
         String output = String.format("Deleted %s", optionalGame.get().getTitle());
         this.gameRepository.delete(optionalGame.get());
         return output;
+    }
+
+    @Override
+    public Set<AllGamesDTO> getAllGames() {
+        return this.gameRepository.findAll()
+                .stream()
+                .map(g -> this.modelMapper.map(g, AllGamesDTO.class))
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public String allGamesReadyForPrint() {
+        return this.getAllGames().stream()
+                .map(AllGamesDTO::toString)
+                .collect(Collectors.joining("\n"));
     }
 }

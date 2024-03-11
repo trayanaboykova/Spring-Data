@@ -62,6 +62,9 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                 case "DeleteGame":
                     command = this.gameService.deleteGame(Long.parseLong(tokens[1]));
                     break;
+                case "AllGames":
+                    command = this.gameService.allGamesReadyForPrint();
+                    break;
 
             }
 

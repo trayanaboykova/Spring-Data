@@ -74,6 +74,11 @@ public class UserServiceImpl implements UserService {
         return output;
     }
 
+    @Override
+    public User getLoggedIn() {
+        return this.loggedIn;
+    }
+
     public void setLoggedIn(User loggedIn) {
         this.loggedIn = loggedIn;
     }
