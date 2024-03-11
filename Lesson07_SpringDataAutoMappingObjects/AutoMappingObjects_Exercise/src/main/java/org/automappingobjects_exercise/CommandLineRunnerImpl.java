@@ -2,9 +2,11 @@ package org.automappingobjects_exercise;
 
 import org.automappingobjects_exercise.service.GameService;
 import org.automappingobjects_exercise.service.UserService;
+import org.automappingobjects_exercise.service.dto.CartItemDTO;
 import org.automappingobjects_exercise.service.dto.GameAddDTO;
 import org.automappingobjects_exercise.service.dto.UserLoginDTO;
 import org.automappingobjects_exercise.service.dto.UserRegisterDTO;
+import org.automappingobjects_exercise.util.ShoppingCartService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -21,10 +23,12 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
     private final UserService userService;
     private final GameService gameService;
+    private final ShoppingCartService shoppingCartService;
 
-    public CommandLineRunnerImpl(UserService userService, GameService gameService) {
+    public CommandLineRunnerImpl(UserService userService, GameService gameService, ShoppingCartService shoppingCartService) {
         this.userService = userService;
         this.gameService = gameService;
+        this.shoppingCartService = shoppingCartService;
     }
 
     @Override
@@ -64,6 +68,15 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                     break;
                 case "AllGames":
                     command = this.gameService.allGamesReadyForPrint();
+                    break;
+                case "AddItem":
+                    command = this.shoppingCartService.addItem(new CartItemDTO(tokens[1]));
+                    break;
+                case "RemoveItem":
+                    command = this.shoppingCartService.deleteItem(new CartItemDTO(tokens[1]));
+                    break;
+                case "BuyItem":
+                    command = this.shoppingCartService.buyItem();
                     break;
 
             }
