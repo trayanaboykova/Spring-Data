@@ -1,6 +1,7 @@
 package org.automappingobjects_exercise.service.impl;
 
 import org.automappingobjects_exercise.data.entities.Game;
+import org.automappingobjects_exercise.data.entities.Order;
 import org.automappingobjects_exercise.data.entities.User;
 import org.automappingobjects_exercise.data.repositories.GameRepository;
 import org.automappingobjects_exercise.data.repositories.UserRepository;

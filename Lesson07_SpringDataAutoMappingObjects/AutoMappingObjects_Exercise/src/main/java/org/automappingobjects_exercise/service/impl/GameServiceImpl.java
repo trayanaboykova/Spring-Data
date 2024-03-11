@@ -4,6 +4,7 @@ import jakarta.validation.ConstraintViolation;
 import org.automappingobjects_exercise.data.entities.Game;
 import org.automappingobjects_exercise.data.repositories.GameRepository;
 import org.automappingobjects_exercise.service.GameService;
+import org.automappingobjects_exercise.service.UserService;
 import org.automappingobjects_exercise.service.dto.AllGamesDTO;
 import org.automappingobjects_exercise.service.dto.GameAddDTO;
 import org.automappingobjects_exercise.util.ValidationService;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class GameServiceImpl implements GameService {
     private final GameRepository gameRepository;
     private final ValidationService validationService;
+    private UserService userService;
     private final ModelMapper modelMapper;
 
     public GameServiceImpl(GameRepository gameRepository, ValidationService validationService, ModelMapper modelMapper) {
@@ -29,16 +31,19 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public String addGame(GameAddDTO gameAddDTO) {
-        if (!this.validationService.isValid(gameAddDTO)) {
-            return this.validationService.validate(gameAddDTO)
-                    .stream().map(ConstraintViolation::getMessage)
-                    .collect(Collectors.joining("\n"));
+        if (this.userService.getLoggedIn() != null && this.userService.getLoggedIn().isAdmin()) {
+            if (!this.validationService.isValid(gameAddDTO)) {
+                return this.validationService.validate(gameAddDTO)
+                        .stream().map(ConstraintViolation::getMessage)
+                        .collect(Collectors.joining("\n"));
+            }
+
+            Game game = this.modelMapper.map(gameAddDTO, Game.class);
+            this.gameRepository.saveAndFlush(game);
+
+            return String.format("Added %s", game.getTitle());
         }
-
-        Game game = this.modelMapper.map(gameAddDTO, Game.class);
-        this.gameRepository.saveAndFlush(game);
-
-        return String.format("Added %s", game.getTitle());
+        return "Logged in User is not admin";
     }
 
     @Override
