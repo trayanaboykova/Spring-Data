@@ -1,8 +1,8 @@
 package org.automappingobjects_exercise.data.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -15,6 +15,11 @@ public class User extends BaseEntity {
     private String fullName;
     @Column(name = "is_admin")
     private boolean isAdmin;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "users_games",
+    joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "game_id", referencedColumnName = "id"))
+    private Set<Game> games;
 
     public User() {
     }
