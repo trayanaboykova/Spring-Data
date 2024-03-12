@@ -2,8 +2,11 @@ package bg.softuni.jsonprocessing_lab;
 
 import bg.softuni.jsonprocessing_lab.dto.AddressDTO;
 import bg.softuni.jsonprocessing_lab.dto.PersonDTO;
+import bg.softuni.jsonprocessing_lab.services.PersonService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +14,16 @@ import java.util.List;
 
 @Component
 public class Main implements CommandLineRunner {
+    private Gson gson;
+    private PersonService personService;
+
+
+    @Autowired
+    public Main(@Qualifier("withoutNulls") Gson gson, PersonService personService) {
+        this.gson = gson;
+        this.personService = personService;
+    }
+
     @Override
     public void run(String... args) throws Exception {
         Gson gson = new GsonBuilder()
@@ -19,7 +32,7 @@ public class Main implements CommandLineRunner {
 
         //printJson(gson);
         //readJson(gson);
-        
+
     }
 
     private void readJson(Gson gson) {
