@@ -17,4 +17,6 @@ Tasks from my course Spring Data at <a href="www.softuni.bg">SoftUni</a>
 
 **<ins>Spring Data Auto Mapping Objects</ins>**: During my lesson, I immersed myself in the intricacies of Spring Data Auto Mapping Objects, focusing particularly on Data Transfer Objects (DTOs) and Model Mapping. I honed my skills in seamlessly transferring data between DTOs and model entities, streamlining the mapping process for enhanced efficiency. This hands-on experience equipped me with the knowledge to optimize data transfer processes and ensure coherence between different layers of the application.
 
+**<ins>JSON Processing</ins>**: In the lecture on JSON (JavaScript Object Notation) and its processing, I explored both the fundamentals of JSON and delved into GSON, a robust Java library. This session provided valuable insights into the human-readable format of JSON for transmitting data objects, as well as its support for various data types such as numbers, strings, and arrays. While GSON facilitates seamless conversion between JSON data and Java objects, my focus primarily remained on understanding JSON's role in data interchange. By immersing myself in JSON and gaining a foundational understanding of GSON, I acquired skills essential for effective JSON manipulation in Java environments, thus solidifying my knowledge in data processing techniques.
+
 
