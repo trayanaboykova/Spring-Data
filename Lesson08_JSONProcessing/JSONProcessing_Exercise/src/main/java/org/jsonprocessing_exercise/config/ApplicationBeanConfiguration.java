@@ -1,6 +1,8 @@
 package org.jsonprocessing_exercise.config;
 
 import com.google.gson.Gson;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +20,11 @@ public class ApplicationBeanConfiguration {
                 .setPrettyPrinting()
                 .excludeFieldsWithoutExposeAnnotation()
                 .create();
+    }
+
+    @Bean
+    public Validator validator() {
+        return Validation.buildDefaultValidatorFactory().getValidator();
     }
 
 }
