@@ -1,6 +1,7 @@
 package org.jsonprocessing_exercise.service.impl;
 
 import com.google.gson.Gson;
+import org.jsonprocessing_exercise.data.entities.Category;
 import org.jsonprocessing_exercise.data.repositories.CategoryRepository;
 import org.jsonprocessing_exercise.service.CategoryService;
 import org.jsonprocessing_exercise.service.dtos.CategorySeedDto;
@@ -32,8 +33,19 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void seedCategories() throws IOException {
-        String jsonContent = new String(Files.readAllBytes(Path.of(FILE_PATH)));
-
-        CategorySeedDto[] categorySeedDtos = this.gson.fromJson(jsonContent, CategorySeedDto[].class);
+        if (this.categoryRepository.count() == 0) {
+            String jsonContent = new String(Files.readAllBytes(Path.of(FILE_PATH)));
+            
+            CategorySeedDto[] categorySeedDtos = this.gson.fromJson(jsonContent, CategorySeedDto[].class);
+            for (CategorySeedDto categorySeedDto : categorySeedDtos) {
+                if (this.validationUtil.isValid(categorySeedDto)) {
+                    this.validationUtil.getViolations(categorySeedDto)
+                            .forEach(v -> System.out.println(v.getMessage()));
+                    continue;
+                }
+                Category category = this.modelMapper.map(categorySeedDto, Category.class);
+                this.categoryRepository.saveAndFlush(category);
+            }
+        }
     }
 }

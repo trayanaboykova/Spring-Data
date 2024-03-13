@@ -16,7 +16,8 @@ public class ApplicationBeanConfiguration {
 
     @Bean
     public Gson gson() {
-        return new Gson().newBuilder()
+        return new Gson()
+                .newBuilder()
                 .setPrettyPrinting()
                 .excludeFieldsWithoutExposeAnnotation()
                 .create();

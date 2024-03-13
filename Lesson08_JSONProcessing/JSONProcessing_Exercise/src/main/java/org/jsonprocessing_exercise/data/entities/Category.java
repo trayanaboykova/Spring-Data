@@ -1,6 +1,5 @@
 package org.jsonprocessing_exercise.data.entities;
 
-import com.google.gson.annotations.Expose;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
