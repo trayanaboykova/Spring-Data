@@ -1,4 +1,6 @@
 package org.jsonprocessing_exercise.service.dtos;
 
-public class UserSeedDto {
+import java.io.Serializable;
+
+public class UserSeedDto implements Serializable {
 }
