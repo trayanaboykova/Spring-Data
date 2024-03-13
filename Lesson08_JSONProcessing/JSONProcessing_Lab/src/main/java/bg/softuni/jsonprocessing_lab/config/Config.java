@@ -4,6 +4,7 @@ import bg.softuni.jsonprocessing_lab.services.AddressService;
 import bg.softuni.jsonprocessing_lab.services.PersonService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,11 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class Config {
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
     @Bean
     public Gson createGSON() {
         return new GsonBuilder()
@@ -33,6 +39,7 @@ public class Config {
                 .setPrettyPrinting()
                 .create();
     }
+
     @Bean
     public PersonService personService(
             AddressService addressService,
