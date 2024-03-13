@@ -1,9 +1,10 @@
 package org.jsonprocessing_exercise.data.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.jsonprocessing_exercise.data.entities.BaseEntity;
+
+import java.util.Set;
+
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
@@ -13,6 +14,11 @@ public class User extends BaseEntity {
     private String lastName;
     @Column
     private Integer age;
+    @ManyToMany
+    @JoinTable(name = "users_friends",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "friend_id", referencedColumnName = "id"))
+    private Set<User> friends;
 
     public String getFirstName() {
         return firstName;
@@ -36,5 +42,13 @@ public class User extends BaseEntity {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Set<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(Set<User> friends) {
+        this.friends = friends;
     }
 }
