@@ -2,14 +2,17 @@ package bg.softuni.jsonprocessing_lab;
 
 import bg.softuni.jsonprocessing_lab.dto.AddressDTO;
 import bg.softuni.jsonprocessing_lab.dto.PersonDTO;
+import bg.softuni.jsonprocessing_lab.entities.Person;
 import bg.softuni.jsonprocessing_lab.services.PersonService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -17,11 +20,14 @@ public class Main implements CommandLineRunner {
     private Gson gson;
     private PersonService personService;
 
+    private ModelMapper modelMapper;
+
 
     @Autowired
-    public Main(@Qualifier("withoutNulls") Gson gson, PersonService personService) {
+    public Main(@Qualifier("withoutNulls") Gson gson, PersonService personService, ModelMapper modelMapper) {
         this.gson = gson;
         this.personService = personService;
+        this.modelMapper = modelMapper;
     }
 
     @Override
@@ -31,7 +37,7 @@ public class Main implements CommandLineRunner {
                 .create();
 
         //printJson(gson);
-        //readJson(gson);
+        readJson(gson);
 
     }
 
@@ -56,8 +62,15 @@ public class Main implements CommandLineRunner {
                 }
                 """;
 
-        PersonDTO personDTO = gson.fromJson(json, PersonDTO.class);
-        System.out.println(personDTO);
+        PersonDTO[] personDTO = gson.fromJson(json, PersonDTO[].class);
+        List<Person> realPeople = new ArrayList<>();
+        for (PersonDTO dto : personDTO) {
+            Person person = modelMapper.map(dto, Person.class);
+            realPeople.add(person);
+        }
+        for (Person realPerson : realPeople) {
+            System.out.println(realPerson);
+        }
     }
 
     private static void printJson(Gson gson) {
