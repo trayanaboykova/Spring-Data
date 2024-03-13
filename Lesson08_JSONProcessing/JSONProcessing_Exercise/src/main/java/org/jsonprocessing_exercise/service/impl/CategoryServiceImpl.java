@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
             
             CategorySeedDto[] categorySeedDtos = this.gson.fromJson(jsonContent, CategorySeedDto[].class);
             for (CategorySeedDto categorySeedDto : categorySeedDtos) {
-                if (this.validationUtil.isValid(categorySeedDto)) {
+                if (!this.validationUtil.isValid(categorySeedDto)) {
                     this.validationUtil.getViolations(categorySeedDto)
                             .forEach(v -> System.out.println(v.getMessage()));
                     continue;
