@@ -6,6 +6,8 @@ import org.jsonprocessing_exercise.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 public class CommandLineRunnerImpl implements CommandLineRunner {
     private final CategoryService categoryService;
@@ -23,5 +25,6 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         this.categoryService.seedCategories();
         this.userService.seedUsers();
         this.productService.seedProducts();
+        this.productService.printAllProductsInRange(BigDecimal.valueOf(500), BigDecimal.valueOf(1000));
     }
 }
