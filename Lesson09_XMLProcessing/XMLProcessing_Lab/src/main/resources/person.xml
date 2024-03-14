@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <person>
-    <phoneNumbers>
+    <phoneNumbers category="work">
         <phoneNumber>
             <number>08983248798</number>
         </phoneNumber>
