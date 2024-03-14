@@ -15,11 +15,18 @@ public class PersonDto {
     @XmlElement(name = "age")
     private int age;
 
+    // private String number = "19891213";
+    private AddressDto address;
+
     public PersonDto() {}
 
-    public PersonDto(String firstName, String lastName, int age) {
+
+    public PersonDto(String firstName, String lastName, int age, AddressDto address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.address = address;
     }
+
+
 }
