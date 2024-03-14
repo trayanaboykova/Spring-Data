@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 import org.xmlprocessing_lab.models.AddressDto;
 import org.xmlprocessing_lab.models.PersonDto;
 import org.xmlprocessing_lab.models.PhoneBook;
+import org.xmlprocessing_lab.models.PhoneNumber;
+
+import java.util.List;
 
 @Component
 public class Main implements CommandLineRunner {
@@ -22,7 +25,16 @@ public class Main implements CommandLineRunner {
 
         JAXBContext bookContext = JAXBContext.newInstance(PhoneBook.class);
         Marshaller bookMarshaller = bookContext.createMarshaller();
-        PhoneBook book = new PhoneBook("Augustine");
+        bookMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+        PhoneNumber firstNumber = new PhoneNumber("Dorothea", "130811");
+        PhoneNumber secondNumber = new PhoneNumber("James", "130813");
+        PhoneNumber thirdNumber = new PhoneNumber("Betty", "130711");
+        PhoneBook book = new PhoneBook(
+                "Augustine",
+                List.of("First", "Second", "Third"),
+                List.of(firstNumber, secondNumber, thirdNumber));
+
         bookMarshaller.marshal(book, System.out);
     }
 }
