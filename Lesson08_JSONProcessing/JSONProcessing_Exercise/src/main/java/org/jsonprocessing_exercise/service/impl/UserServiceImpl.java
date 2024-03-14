@@ -4,9 +4,8 @@ import com.google.gson.Gson;
 import org.jsonprocessing_exercise.data.entities.User;
 import org.jsonprocessing_exercise.data.repositories.UserRepository;
 import org.jsonprocessing_exercise.service.UserService;
-import org.jsonprocessing_exercise.service.dtos.exports.ProductSoldDto;
+import org.jsonprocessing_exercise.service.dtos.exports.*;
 import org.jsonprocessing_exercise.service.dtos.imports.UserSeedDto;
-import org.jsonprocessing_exercise.service.dtos.exports.UserSoldProductsDto;
 import org.jsonprocessing_exercise.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -66,7 +65,8 @@ public class UserServiceImpl implements UserService {
                             .map(p -> this.modelMapper.map(p, ProductSoldDto.class))
                             .collect(Collectors.toList());
                     userDto.setSoldProduct(soldProductsDto);
-                    return userDto;})
+                    return userDto;
+                })
                 .sorted(Comparator.comparing(UserSoldProductsDto::getLastName).thenComparing(UserSoldProductsDto::getFirstName))
                 .toList();
     }
@@ -74,6 +74,44 @@ public class UserServiceImpl implements UserService {
     @Override
     public void printAllUsersAndSoldItems() {
         String json = this.gson.toJson(this.getAllUsersAndSoldItems());
+        System.out.println(json);
+    }
+
+    @Override
+    public UserAndProductDto getUserAndProductDto() {
+        UserAndProductDto userAndProductDto = new UserAndProductDto();
+        List<UserSoldDto> userSoldDtos = this.userRepository.findAll()
+                .stream()
+                .filter(u -> !u.getSold().isEmpty())
+                .map(u -> {
+                    UserSoldDto userSoldDto = this.modelMapper.map(u, UserSoldDto.class);
+                    ProductSoldByUserDto productSoldByUserDto = new ProductSoldByUserDto();
+
+                    List<ProductInfoDto> productInfoDtos = u.getSold()
+                            .stream()
+                            .map(p -> this.modelMapper.map(p, ProductInfoDto.class))
+                            .collect(Collectors.toList());
+                    productSoldByUserDto.setProducts(productInfoDtos);
+                    productSoldByUserDto.setCount(productInfoDtos.size());
+
+                    userSoldDto.setSoldProducts(productSoldByUserDto);
+                    return userSoldDto;
+                })
+                .sorted((a, b) -> {
+                    int countA = a.getSoldProducts().getCount();
+                    int countB = b.getSoldProducts().getCount();
+                    return Integer.compare(countB, countA);
+                })
+                .collect(Collectors.toList());
+
+        userAndProductDto.setUsers(userSoldDtos);
+        userAndProductDto.setUsersCount(userSoldDtos.size());
+        return userAndProductDto;
+    }
+
+    @Override
+    public void printGetUserAndProductDto() {
+        String json = this.gson.toJson(this.getUserAndProductDto());
         System.out.println(json);
     }
 }
