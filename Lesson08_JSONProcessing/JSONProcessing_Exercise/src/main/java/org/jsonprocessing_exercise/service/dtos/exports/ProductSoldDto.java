@@ -1,4 +1,4 @@
-package org.jsonprocessing_exercise.service.dtos;
+package org.jsonprocessing_exercise.service.dtos.exports;
 
 import com.google.gson.annotations.Expose;
 

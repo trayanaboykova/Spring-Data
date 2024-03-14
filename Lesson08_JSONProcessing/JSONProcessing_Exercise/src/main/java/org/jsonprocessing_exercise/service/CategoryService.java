@@ -1,6 +1,6 @@
 package org.jsonprocessing_exercise.service;
 
-import org.jsonprocessing_exercise.service.dtos.CategoryByProductsDto;
+import org.jsonprocessing_exercise.service.dtos.exports.CategoryByProductsDto;
 
 import java.io.IOException;
 import java.util.List;

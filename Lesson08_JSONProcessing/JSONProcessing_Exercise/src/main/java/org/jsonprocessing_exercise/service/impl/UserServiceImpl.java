@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 import org.jsonprocessing_exercise.data.entities.User;
 import org.jsonprocessing_exercise.data.repositories.UserRepository;
 import org.jsonprocessing_exercise.service.UserService;
-import org.jsonprocessing_exercise.service.dtos.ProductSoldDto;
-import org.jsonprocessing_exercise.service.dtos.UserSeedDto;
-import org.jsonprocessing_exercise.service.dtos.UserSoldProductsDto;
+import org.jsonprocessing_exercise.service.dtos.exports.ProductSoldDto;
+import org.jsonprocessing_exercise.service.dtos.imports.UserSeedDto;
+import org.jsonprocessing_exercise.service.dtos.exports.UserSoldProductsDto;
 import org.jsonprocessing_exercise.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service

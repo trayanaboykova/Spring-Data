@@ -1,4 +1,4 @@
-package org.jsonprocessing_exercise.service.dtos;
+package org.jsonprocessing_exercise.service.dtos.imports;
 
 import com.google.gson.annotations.Expose;
 import jakarta.validation.constraints.NotNull;

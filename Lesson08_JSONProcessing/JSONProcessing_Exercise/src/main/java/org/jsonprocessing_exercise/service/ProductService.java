@@ -1,6 +1,6 @@
 package org.jsonprocessing_exercise.service;
 
-import org.jsonprocessing_exercise.service.dtos.ProductInRangeDto;
+import org.jsonprocessing_exercise.service.dtos.exports.ProductInRangeDto;
 
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;

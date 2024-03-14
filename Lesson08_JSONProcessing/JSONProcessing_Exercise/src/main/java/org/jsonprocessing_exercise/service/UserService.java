@@ -1,6 +1,6 @@
 package org.jsonprocessing_exercise.service;
 
-import org.jsonprocessing_exercise.service.dtos.UserSoldProductsDto;
+import org.jsonprocessing_exercise.service.dtos.exports.UserSoldProductsDto;
 
 import java.io.FileNotFoundException;
 import java.util.List;
