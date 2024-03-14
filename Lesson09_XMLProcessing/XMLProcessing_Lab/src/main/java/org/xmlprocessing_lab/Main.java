@@ -12,6 +12,7 @@ public class Main implements CommandLineRunner {
     public void run(String... args) throws Exception {
         JAXBContext personContext = JAXBContext.newInstance(PersonDto.class);
         Marshaller personMarshaller = personContext.createMarshaller();
+        personMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
         PersonDto person = new PersonDto("Taylor", "Swift", 13);
 
