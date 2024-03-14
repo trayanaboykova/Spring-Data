@@ -2,6 +2,7 @@ package org.xmlprocessing_lab;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.xmlprocessing_lab.models.AddressDto;
@@ -23,6 +24,10 @@ public class Main implements CommandLineRunner {
         PersonDto person = new PersonDto("Taylor", "Swift", 13, addressDto);
         personMarshaller.marshal(person, System.out);
 
+        // Unmarshaller personUnmarshaller = personContext.createUnmarshaller();
+        // PersonDto parsedPerson = (PersonDto) personUnmarshaller.unmarshal(System.in);
+        // System.out.println(parsedPerson);
+
         JAXBContext bookContext = JAXBContext.newInstance(PhoneBook.class);
         Marshaller bookMarshaller = bookContext.createMarshaller();
         bookMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -36,6 +41,11 @@ public class Main implements CommandLineRunner {
                 List.of(firstNumber, secondNumber, thirdNumber));
 
         bookMarshaller.marshal(book, System.out);
+
+        Unmarshaller bookUnmarshaller = bookContext.createUnmarshaller();
+        PhoneBook parsedBook = (PhoneBook) bookUnmarshaller.unmarshal(System.in);
+        System.out.println(parsedBook);
+
     }
 }
 
