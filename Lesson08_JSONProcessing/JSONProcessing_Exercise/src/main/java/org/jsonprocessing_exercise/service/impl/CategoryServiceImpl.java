@@ -2,16 +2,22 @@ package org.jsonprocessing_exercise.service.impl;
 
 import com.google.gson.Gson;
 import org.jsonprocessing_exercise.data.entities.Category;
+import org.jsonprocessing_exercise.data.entities.Product;
 import org.jsonprocessing_exercise.data.repositories.CategoryRepository;
 import org.jsonprocessing_exercise.service.CategoryService;
+import org.jsonprocessing_exercise.service.dtos.CategoryByProductsDto;
 import org.jsonprocessing_exercise.service.dtos.CategorySeedDto;
 import org.jsonprocessing_exercise.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -47,5 +53,26 @@ public class CategoryServiceImpl implements CategoryService {
                 this.categoryRepository.saveAndFlush(category);
             }
         }
+    }
+
+    @Override
+    public List<CategoryByProductsDto> getAllCategoriesByProducts() {
+        return this.categoryRepository.findAllCategoriesByProducts()
+                .stream()
+                .map(c -> {
+                    CategoryByProductsDto dto = this.modelMapper.map(c, CategoryByProductsDto.class);
+                    dto.setProductsCount(c.getProducts().size());
+                    BigDecimal sum = c.getProducts().stream().map(Product::getPrice).reduce(BigDecimal::add).get();
+                    dto.setTotalRevenue(sum);
+                    dto.setAveragePrice(sum.divide(BigDecimal.valueOf(c.getProducts().size()), MathContext.DECIMAL64));
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void printAllCategoriesByProducts() {
+        String json = this.gson.toJson(this.getAllCategoriesByProducts());
+        System.out.println(json);
     }
 }

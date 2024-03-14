@@ -1,16 +1,17 @@
 package org.jsonprocessing_exercise.data.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "categories")
 public class Category extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
+    @ManyToMany(mappedBy = "categories", fetch = FetchType.EAGER)
+    private Set<Product> products;
 
     public String getName() {
         return name;
@@ -18,6 +19,14 @@ public class Category extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 
     @Override
