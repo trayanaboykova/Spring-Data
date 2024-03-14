@@ -4,6 +4,7 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.xmlprocessing_lab.models.AddressDto;
 import org.xmlprocessing_lab.models.PersonDto;
 
 @Component
@@ -14,8 +15,10 @@ public class Main implements CommandLineRunner {
         Marshaller personMarshaller = personContext.createMarshaller();
         personMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        PersonDto person = new PersonDto("Taylor", "Swift", 13);
+        AddressDto addressDto = new AddressDto("USA", "New York");
+        PersonDto person = new PersonDto("Taylor", "Swift", 13, addressDto);
 
         personMarshaller.marshal(person, System.out);
     }
 }
+
