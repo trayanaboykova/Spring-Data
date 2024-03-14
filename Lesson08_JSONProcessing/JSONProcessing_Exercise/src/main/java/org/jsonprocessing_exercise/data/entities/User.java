@@ -14,6 +14,11 @@ public class User extends BaseEntity {
     private String lastName;
     @Column
     private Integer age;
+    @OneToMany(mappedBy = "seller")
+    private Set<Product> sold;
+    @OneToMany(mappedBy = "buyer")
+    private Set<Product> bought;
+
     @ManyToMany
     @JoinTable(name = "users_friends",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
