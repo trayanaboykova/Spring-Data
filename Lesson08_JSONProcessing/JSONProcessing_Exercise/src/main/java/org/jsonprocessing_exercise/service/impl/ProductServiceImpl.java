@@ -8,6 +8,7 @@ import org.jsonprocessing_exercise.data.repositories.CategoryRepository;
 import org.jsonprocessing_exercise.data.repositories.ProductRepository;
 import org.jsonprocessing_exercise.data.repositories.UserRepository;
 import org.jsonprocessing_exercise.service.ProductService;
+import org.jsonprocessing_exercise.service.dtos.ProductInRangeDto;
 import org.jsonprocessing_exercise.service.dtos.ProductSeedDto;
 import org.jsonprocessing_exercise.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
@@ -15,9 +16,13 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -62,11 +67,29 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public List<ProductInRangeDto> getAllProductsInRange(BigDecimal from, BigDecimal to) {
+        return this.productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(from, to)
+                .stream()
+                .map(p -> {
+                    ProductInRangeDto dto = this.modelMapper.map(p, ProductInRangeDto.class);
+                    dto.setSeller(p.getSeller().getFirstName() + " " + p.getSeller().getLastName());
+                    return dto;
+                })
+                .sorted(Comparator.comparing(ProductInRangeDto::getPrice))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void printAllProductsInRange(BigDecimal from, BigDecimal to) {
+        System.out.println(this.gson.toJson(this.getAllProductsInRange(from, to)));
+    }
+
     private Set<Category> getRandomCategories() {
         Set<Category> categories = new HashSet<>();
 
-        int randomCount = ThreadLocalRandom.current().nextInt(1,4);
-        for (int i = 0; i < randomCount ; i++) {
+        int randomCount = ThreadLocalRandom.current().nextInt(1, 4);
+        for (int i = 0; i < randomCount; i++) {
             long randomId = ThreadLocalRandom.current().nextLong(1, this.categoryRepository.count() + 1);
             categories.add(this.categoryRepository.findById(randomId).get());
         }
