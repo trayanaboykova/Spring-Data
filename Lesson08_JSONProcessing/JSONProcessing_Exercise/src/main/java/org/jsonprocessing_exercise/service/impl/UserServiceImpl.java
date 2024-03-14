@@ -4,13 +4,19 @@ import com.google.gson.Gson;
 import org.jsonprocessing_exercise.data.entities.User;
 import org.jsonprocessing_exercise.data.repositories.UserRepository;
 import org.jsonprocessing_exercise.service.UserService;
+import org.jsonprocessing_exercise.service.dtos.ProductSoldDto;
 import org.jsonprocessing_exercise.service.dtos.UserSeedDto;
+import org.jsonprocessing_exercise.service.dtos.UserSoldProductsDto;
 import org.jsonprocessing_exercise.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -45,5 +51,30 @@ public class UserServiceImpl implements UserService {
                 this.userRepository.saveAndFlush(user);
             }
         }
+    }
+
+    @Override
+    public List<UserSoldProductsDto> getAllUsersAndSoldItems() {
+        return this.userRepository.findAll()
+                .stream()
+                .filter(u ->
+                        u.getSold().stream().anyMatch(p -> p.getBuyer() != null))
+                .map(u -> {
+                    UserSoldProductsDto userDto = this.modelMapper.map(u, UserSoldProductsDto.class);
+                    List<ProductSoldDto> soldProductsDto = u.getSold()
+                            .stream()
+                            .filter(p -> p.getBuyer() != null)
+                            .map(p -> this.modelMapper.map(p, ProductSoldDto.class))
+                            .collect(Collectors.toList());
+                    userDto.setSoldProduct(soldProductsDto);
+                    return userDto;})
+                .sorted(Comparator.comparing(UserSoldProductsDto::getLastName).thenComparing(UserSoldProductsDto::getFirstName))
+                .toList();
+    }
+
+    @Override
+    public void printAllUsersAndSoldItems() {
+        String json = this.gson.toJson(this.getAllUsersAndSoldItems());
+        System.out.println(json);
     }
 }

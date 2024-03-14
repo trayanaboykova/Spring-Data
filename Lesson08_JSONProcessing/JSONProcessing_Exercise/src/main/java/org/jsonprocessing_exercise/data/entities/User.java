@@ -1,7 +1,6 @@
 package org.jsonprocessing_exercise.data.entities;
 
 import jakarta.persistence.*;
-import org.jsonprocessing_exercise.data.entities.BaseEntity;
 
 import java.util.Set;
 
@@ -14,9 +13,9 @@ public class User extends BaseEntity {
     private String lastName;
     @Column
     private Integer age;
-    @OneToMany(mappedBy = "seller")
+    @OneToMany(mappedBy = "seller", fetch = FetchType.EAGER)
     private Set<Product> sold;
-    @OneToMany(mappedBy = "buyer")
+    @OneToMany(mappedBy = "buyer", fetch = FetchType.EAGER)
     private Set<Product> bought;
 
     @ManyToMany
@@ -55,5 +54,21 @@ public class User extends BaseEntity {
 
     public void setFriends(Set<User> friends) {
         this.friends = friends;
+    }
+
+    public Set<Product> getSold() {
+        return sold;
+    }
+
+    public void setSold(Set<Product> sold) {
+        this.sold = sold;
+    }
+
+    public Set<Product> getBought() {
+        return bought;
+    }
+
+    public void setBought(Set<Product> bought) {
+        this.bought = bought;
     }
 }
