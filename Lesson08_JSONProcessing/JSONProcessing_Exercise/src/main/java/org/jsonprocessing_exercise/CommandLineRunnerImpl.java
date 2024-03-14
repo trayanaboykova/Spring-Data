@@ -26,6 +26,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         this.userService.seedUsers();
         this.productService.seedProducts();
         // this.productService.printAllProductsInRange(BigDecimal.valueOf(500), BigDecimal.valueOf(1000));
-        this.userService.printAllUsersAndSoldItems();
+        // this.userService.printAllUsersAndSoldItems();
+        this.categoryService.printAllCategoriesByProducts();
     }
 }
