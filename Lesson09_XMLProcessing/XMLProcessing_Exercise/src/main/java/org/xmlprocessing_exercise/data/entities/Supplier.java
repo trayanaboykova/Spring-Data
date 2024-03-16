@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "suppliers")
 public class Supplier extends BaseEntity {
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String name;
     @Column(name = "is_importer")
     private boolean isImporter;
