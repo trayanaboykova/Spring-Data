@@ -6,6 +6,7 @@ import jakarta.xml.bind.Unmarshaller;
 import org.springframework.stereotype.Service;
 import org.xmlprocessing_exercise.data.repositories.SupplierRepository;
 import org.xmlprocessing_exercise.service.SupplierService;
+import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedDto;
 import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedRootDto;
 import org.xmlprocessing_exercise.util.XmlParser;
 
@@ -24,6 +25,11 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void seedSupplier() throws JAXBException {
-        SupplierSeedRootDto supplierSeedRootDto = xmlParser.parse(SupplierSeedRootDto.class, FILE_IMPORT_PATH);
+        if (this.supplierRepository.count() == 0) {
+            SupplierSeedRootDto supplierSeedRootDto = xmlParser.parse(SupplierSeedRootDto.class, FILE_IMPORT_PATH);
+            for (SupplierSeedDto supplierSeedDto : supplierSeedRootDto.getSupplierSeedDtoList()) {
+
+            }
+        }
     }
 }
