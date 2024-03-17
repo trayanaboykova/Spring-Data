@@ -10,7 +10,7 @@ import org.xmlprocessing_exercise.data.repositories.PartRepository;
 import org.xmlprocessing_exercise.service.CarService;
 import org.xmlprocessing_exercise.service.dto.imports.CarSeedDto;
 import org.xmlprocessing_exercise.service.dto.imports.CarSeedRootDto;
-import org.xmlprocessing_exercise.util.XmlParser;
+import org.xmlprocessing_exercise.util.parser.XmlParser;
 
 import java.util.HashSet;
 import java.util.Set;

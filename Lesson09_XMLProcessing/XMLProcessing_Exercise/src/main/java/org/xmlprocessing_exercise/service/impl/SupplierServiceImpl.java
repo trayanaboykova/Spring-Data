@@ -8,8 +8,8 @@ import org.xmlprocessing_exercise.data.repositories.SupplierRepository;
 import org.xmlprocessing_exercise.service.SupplierService;
 import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedDto;
 import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedRootDto;
-import org.xmlprocessing_exercise.util.ValidationUtil;
-import org.xmlprocessing_exercise.util.XmlParser;
+import org.xmlprocessing_exercise.util.validations.ValidationUtil;
+import org.xmlprocessing_exercise.util.parser.XmlParser;
 
 
 @Service

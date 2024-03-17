@@ -1,10 +1,9 @@
-package org.xmlprocessing_exercise.util;
+package org.xmlprocessing_exercise.util.parser;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 import org.springframework.stereotype.Component;
-import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedRootDto;
 
 import java.io.File;
 

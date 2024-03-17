@@ -1,4 +1,4 @@
-package org.xmlprocessing_exercise.util;
+package org.xmlprocessing_exercise.util.validations;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;

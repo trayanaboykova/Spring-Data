@@ -1,4 +1,4 @@
-package org.xmlprocessing_exercise.util;
+package org.xmlprocessing_exercise.util.parser;
 
 import jakarta.xml.bind.JAXBException;
 

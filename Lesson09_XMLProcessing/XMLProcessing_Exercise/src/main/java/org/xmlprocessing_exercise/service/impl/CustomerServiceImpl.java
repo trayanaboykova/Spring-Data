@@ -4,13 +4,10 @@ import jakarta.xml.bind.JAXBException;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.xmlprocessing_exercise.data.entities.Customer;
-import org.xmlprocessing_exercise.data.entities.Supplier;
 import org.xmlprocessing_exercise.data.repositories.CustomerRepository;
 import org.xmlprocessing_exercise.service.CustomerService;
 import org.xmlprocessing_exercise.service.dto.imports.CustomerSeedRootDto;
-import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedDto;
-import org.xmlprocessing_exercise.service.dto.imports.SupplierSeedRootDto;
-import org.xmlprocessing_exercise.util.XmlParser;
+import org.xmlprocessing_exercise.util.parser.XmlParser;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
