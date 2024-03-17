@@ -11,7 +11,7 @@ import org.xmlprocessing_exercise.util.parser.XmlParser;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/customers.xml";
+    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/imports/customers.xml";
     private final CustomerRepository customerRepository;
     private final XmlParser xmlParser;
     private final ModelMapper modelMapper;

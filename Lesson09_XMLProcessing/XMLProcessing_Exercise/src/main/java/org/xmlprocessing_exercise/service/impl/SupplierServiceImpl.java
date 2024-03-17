@@ -14,7 +14,7 @@ import org.xmlprocessing_exercise.util.parser.XmlParser;
 
 @Service
 public class SupplierServiceImpl implements SupplierService {
-    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/suppliers.xml";
+    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/imports/suppliers.xml";
     private final SupplierRepository supplierRepository;
     private final XmlParser xmlParser;
     private final ValidationUtil validationUtil;

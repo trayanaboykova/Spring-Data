@@ -17,7 +17,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class PartServiceImpl implements PartService {
-    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/parts.xml";
+    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/imports/parts.xml";
 
     private final PartRepository partRepository;
     private final SupplierRepository supplierRepository;

@@ -18,7 +18,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class CarServiceImpl implements CarService {
-    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/cars.xml";
+    private static final String FILE_IMPORT_PATH = "src/main/resources/xml/imports/cars.xml";
 
     private final CarRepository carRepository;
     private final PartRepository partRepository;

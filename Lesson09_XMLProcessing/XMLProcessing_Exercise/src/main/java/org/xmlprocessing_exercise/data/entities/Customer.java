@@ -12,7 +12,7 @@ public class Customer extends BaseEntity {
     @Column(nullable = false)
     private String name;
     @Column(name = "birth_date")
-    private LocalDateTime birthdate;
+    private LocalDateTime birthDate;
     @Column(name = "is_young_driver")
     private boolean isYoungDriver;
 
@@ -24,12 +24,12 @@ public class Customer extends BaseEntity {
         this.name = name;
     }
 
-    public LocalDateTime getBirthdate() {
-        return birthdate;
+    public LocalDateTime getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdate(LocalDateTime birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthDate(LocalDateTime birthdate) {
+        this.birthDate = birthdate;
     }
 
     public boolean isYoungDriver() {
