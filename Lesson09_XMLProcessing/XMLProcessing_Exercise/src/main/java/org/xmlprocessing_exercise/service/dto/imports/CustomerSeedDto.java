@@ -2,7 +2,7 @@ package org.xmlprocessing_exercise.service.dto.imports;
 
 import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.xmlprocessing_exercise.util.LocalDateTimeAdapter;
+import org.xmlprocessing_exercise.util.adapters.LocalDateTimeAdapter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
