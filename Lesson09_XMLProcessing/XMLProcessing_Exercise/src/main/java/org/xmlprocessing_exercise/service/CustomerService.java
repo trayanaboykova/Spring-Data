@@ -7,5 +7,5 @@ public interface CustomerService {
 
     void exportOrderedCustomers() throws JAXBException;
 
-
+    void exportCustomersWithBoughtCars() throws JAXBException;
 }

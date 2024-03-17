@@ -1,10 +1,9 @@
 package org.xmlprocessing_exercise.data.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -15,6 +14,8 @@ public class Customer extends BaseEntity {
     private LocalDateTime birthDate;
     @Column(name = "is_young_driver")
     private boolean isYoungDriver;
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    private Set<Sale> sales;
 
     public String getName() {
         return name;
@@ -38,5 +39,13 @@ public class Customer extends BaseEntity {
 
     public void setYoungDriver(boolean youngDriver) {
         isYoungDriver = youngDriver;
+    }
+
+    public Set<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(Set<Sale> sales) {
+        this.sales = sales;
     }
 }

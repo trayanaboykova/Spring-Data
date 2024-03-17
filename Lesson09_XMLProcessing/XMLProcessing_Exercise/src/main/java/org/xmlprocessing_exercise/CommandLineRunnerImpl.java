@@ -30,7 +30,8 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
         // this.customerService.exportOrderedCustomers();
         // this.carService.exportToyotaCars();
-        //this.supplierService.exportLocalSuppliers();
-        this.carService.exportCarsAndParts();
+        // this.supplierService.exportLocalSuppliers();
+        // this.carService.exportCarsAndParts();
+        this.customerService.exportCustomersWithBoughtCars();
     }
 }
