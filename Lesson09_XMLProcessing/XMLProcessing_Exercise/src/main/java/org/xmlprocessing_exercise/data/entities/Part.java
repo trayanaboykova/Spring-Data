@@ -3,6 +3,7 @@ package org.xmlprocessing_exercise.data.entities;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @Entity
 @Table(name = "parts")
@@ -47,5 +48,18 @@ public class Part extends BaseEntity {
 
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Part part = (Part) o;
+        return quantity == part.quantity && Objects.equals(name, part.name) && Objects.equals(price, part.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, quantity);
     }
 }
