@@ -13,7 +13,7 @@ public class Car extends BaseEntity {
     private String model;
     @Column
     private long travelledDistance;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "cars_parts",
     joinColumns = @JoinColumn(name = "car_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "part_id", referencedColumnName = "id"))

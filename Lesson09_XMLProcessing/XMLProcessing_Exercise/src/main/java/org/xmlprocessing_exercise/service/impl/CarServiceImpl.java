@@ -8,8 +8,7 @@ import org.xmlprocessing_exercise.data.entities.Part;
 import org.xmlprocessing_exercise.data.repositories.CarRepository;
 import org.xmlprocessing_exercise.data.repositories.PartRepository;
 import org.xmlprocessing_exercise.service.CarService;
-import org.xmlprocessing_exercise.service.dto.exports.CarToyotaDto;
-import org.xmlprocessing_exercise.service.dto.exports.CarToyotaRootDto;
+import org.xmlprocessing_exercise.service.dto.exports.*;
 import org.xmlprocessing_exercise.service.dto.imports.CarSeedDto;
 import org.xmlprocessing_exercise.service.dto.imports.CarSeedRootDto;
 import org.xmlprocessing_exercise.util.parser.XmlParser;
@@ -24,6 +23,7 @@ import java.util.stream.Collectors;
 public class CarServiceImpl implements CarService {
     private static final String FILE_IMPORT_PATH = "src/main/resources/xml/imports/cars.xml";
     private static final String FILE_EXPORT_TOYOTA_PATH = "src/main/resources/xml/exports/toyota-cars.xml";
+    private static final String FILE_EXPORT_CARS_AND_PARTS_PATH = "src/main/resources/xml/exports/cars-and-parts.xml";
 
     private final CarRepository carRepository;
     private final PartRepository partRepository;
@@ -48,8 +48,8 @@ public class CarServiceImpl implements CarService {
                 this.carRepository.saveAndFlush(car);
             }
 
-            }
         }
+    }
 
     @Override
     public void exportToyotaCars() throws JAXBException {
@@ -64,16 +64,41 @@ public class CarServiceImpl implements CarService {
         this.xmlParser.exportToFile(CarToyotaRootDto.class, carToyotaRootDto, FILE_EXPORT_TOYOTA_PATH);
     }
 
+    @Override
+    public void exportCarsAndParts() throws JAXBException {
+        List<CarAndPartsDto> carAndPartsDtos = this.carRepository.findAll()
+                .stream()
+                .map(c -> {
+                    CarAndPartsDto carAndPartsDto = this.modelMapper.map(c, CarAndPartsDto.class);
+
+                    PartRootDto partRootDto = new PartRootDto();
+                    List<PartDto> partDtos = c.getParts()
+                            .stream()
+                            .map(p -> this.modelMapper.map(p, PartDto.class))
+                            .collect(Collectors.toList());
+                    partRootDto.setPartDtos(partDtos);
+
+                    carAndPartsDto.setPartRootDto(partRootDto);
+                    return carAndPartsDto;
+                })
+                .collect(Collectors.toList());
+
+        CarAndPartsRootDto carAndPartsRootDto = new CarAndPartsRootDto();
+        carAndPartsRootDto.setCarAndPartsDtoList(carAndPartsDtos);
+
+        this.xmlParser.exportToFile(CarAndPartsRootDto.class, carAndPartsRootDto, FILE_EXPORT_CARS_AND_PARTS_PATH);
+    }
+
     private Set<Part> getRandomParts() {
         Set<Part> parts = new HashSet<>();
 
-        int count = ThreadLocalRandom.current().nextInt(1,3);
+        int count = ThreadLocalRandom.current().nextInt(1, 3);
 
         for (int i = 0; i < count; i++) {
             parts.add(this.partRepository.findById(
-                    ThreadLocalRandom
-                            .current()
-                            .nextLong(1, this.partRepository.count() + 1))
+                            ThreadLocalRandom
+                                    .current()
+                                    .nextLong(1, this.partRepository.count() + 1))
                     .get());
         }
 
