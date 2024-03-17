@@ -8,17 +8,22 @@ import org.xmlprocessing_exercise.data.entities.Part;
 import org.xmlprocessing_exercise.data.repositories.CarRepository;
 import org.xmlprocessing_exercise.data.repositories.PartRepository;
 import org.xmlprocessing_exercise.service.CarService;
+import org.xmlprocessing_exercise.service.dto.exports.CarToyotaDto;
+import org.xmlprocessing_exercise.service.dto.exports.CarToyotaRootDto;
 import org.xmlprocessing_exercise.service.dto.imports.CarSeedDto;
 import org.xmlprocessing_exercise.service.dto.imports.CarSeedRootDto;
 import org.xmlprocessing_exercise.util.parser.XmlParser;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
     private static final String FILE_IMPORT_PATH = "src/main/resources/xml/imports/cars.xml";
+    private static final String FILE_EXPORT_TOYOTA_PATH = "src/main/resources/xml/exports/toyota-cars.xml";
 
     private final CarRepository carRepository;
     private final PartRepository partRepository;
@@ -45,6 +50,19 @@ public class CarServiceImpl implements CarService {
 
             }
         }
+
+    @Override
+    public void exportToyotaCars() throws JAXBException {
+        List<CarToyotaDto> toyotaDtos = this.carRepository.findAllByMakeOrderByTravelledDistanceDesc("Toyota")
+                .stream()
+                .map(c -> this.modelMapper.map(c, CarToyotaDto.class))
+                .collect(Collectors.toList());
+
+        CarToyotaRootDto carToyotaRootDto = new CarToyotaRootDto();
+        carToyotaRootDto.setCarToyotaDtoList(toyotaDtos);
+
+        this.xmlParser.exportToFile(CarToyotaRootDto.class, carToyotaRootDto, FILE_EXPORT_TOYOTA_PATH);
+    }
 
     private Set<Part> getRandomParts() {
         Set<Part> parts = new HashSet<>();

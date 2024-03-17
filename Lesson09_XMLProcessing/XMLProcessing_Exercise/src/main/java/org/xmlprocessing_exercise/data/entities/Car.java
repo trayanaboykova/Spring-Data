@@ -8,7 +8,7 @@ import java.util.Set;
 @Table(name = "cars")
 public class Car extends BaseEntity {
     @Column
-    private String name;
+    private String make;
     @Column
     private String model;
     @Column
@@ -19,12 +19,12 @@ public class Car extends BaseEntity {
     inverseJoinColumns = @JoinColumn(name = "part_id", referencedColumnName = "id"))
     private Set<Part> parts;
 
-    public String getName() {
-        return name;
+    public String getMake() {
+        return make;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMake(String name) {
+        this.make = name;
     }
 
     public String getModel() {
