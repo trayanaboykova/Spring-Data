@@ -51,9 +51,8 @@ public class PartServiceImpl implements PartService {
     }
 
     private Supplier getRandomSupplier() {
-        return this.supplierRepository
-                .findById(
-                        ThreadLocalRandom.current().nextLong(1, this.supplierRepository.count() + 1)
-                ).get();
+        return this.supplierRepository.findById(
+                ThreadLocalRandom.current().nextLong(1, this.supplierRepository.count() + 1))
+                .get();
     }
 }
