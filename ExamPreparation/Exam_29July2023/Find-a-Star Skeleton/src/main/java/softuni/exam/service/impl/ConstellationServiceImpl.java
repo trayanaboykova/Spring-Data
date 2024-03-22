@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Optional;
 
 @Service
 public class ConstellationServiceImpl implements ConstellationService {
@@ -45,7 +46,8 @@ public class ConstellationServiceImpl implements ConstellationService {
         StringBuilder sb = new StringBuilder();
         ConstellationSeedDto[] constellationSeedDtos = this.gson.fromJson(new FileReader(FILE_PATH), ConstellationSeedDto[].class);
         for (ConstellationSeedDto constellationSeedDto : constellationSeedDtos) {
-            if (!this.validationUtil.isValid(constellationSeedDto)) {
+            Optional<Constellation> optional = this.constellationRepository.findByName(constellationSeedDto.getName());
+            if (!this.validationUtil.isValid(constellationSeedDto) || optional.isPresent() ) {
                 sb.append("Invalid constellation\n");
                 continue;
             }
