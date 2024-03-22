@@ -1,6 +1,7 @@
 package softuni.exam.service.impl;
 
-import org.springframework.stereotype.Repository;
+import com.google.gson.Gson;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import softuni.exam.repository.ConstellationRepository;
 import softuni.exam.service.ConstellationService;
@@ -13,9 +14,13 @@ import java.nio.file.Path;
 public class ConstellationServiceImpl implements ConstellationService {
     private static final String FILE_PATH = "src/main/resources/files/json/constellations.json";
     private final ConstellationRepository constellationRepository;
+    private final Gson gson;
+    private final ModelMapper modelMapper;
 
-    public ConstellationServiceImpl(ConstellationRepository constellationRepository) {
+    public ConstellationServiceImpl(ConstellationRepository constellationRepository, Gson gson, ModelMapper modelMapper) {
         this.constellationRepository = constellationRepository;
+        this.gson = gson;
+        this.modelMapper = modelMapper;
     }
 
 
