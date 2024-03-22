@@ -3,9 +3,13 @@ package softuni.exam.service.impl;
 import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import softuni.exam.models.dto.jsons.ConstellationSeedDto;
+import softuni.exam.models.entity.Constellation;
 import softuni.exam.repository.ConstellationRepository;
 import softuni.exam.service.ConstellationService;
+import softuni.exam.util.ValidationUtil;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,11 +20,13 @@ public class ConstellationServiceImpl implements ConstellationService {
     private final ConstellationRepository constellationRepository;
     private final Gson gson;
     private final ModelMapper modelMapper;
+    private final ValidationUtil validationUtil;
 
-    public ConstellationServiceImpl(ConstellationRepository constellationRepository, Gson gson, ModelMapper modelMapper) {
+    public ConstellationServiceImpl(ConstellationRepository constellationRepository, Gson gson, ModelMapper modelMapper, ValidationUtil validationUtil) {
         this.constellationRepository = constellationRepository;
         this.gson = gson;
         this.modelMapper = modelMapper;
+        this.validationUtil = validationUtil;
     }
 
 
@@ -36,6 +42,17 @@ public class ConstellationServiceImpl implements ConstellationService {
 
     @Override
     public String importConstellations() throws IOException {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        ConstellationSeedDto[] constellationSeedDtos = this.gson.fromJson(new FileReader(FILE_PATH), ConstellationSeedDto[].class);
+        for (ConstellationSeedDto constellationSeedDto : constellationSeedDtos) {
+            if (!this.validationUtil.isValid(constellationSeedDto)) {
+                sb.append("Invalid constellation\n");
+                continue;
+            }
+            Constellation constellation = this.modelMapper.map(constellationSeedDto, Constellation.class);
+            this.constellationRepository.saveAndFlush(constellation);
+            sb.append(String.format("Successfully imported constellation %s - %s\n", constellation.getName(), constellation.getDescription()));
+        }
+        return sb.toString();
     }
 }
