@@ -2,6 +2,7 @@ package softuni.exam.models.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
+import java.util.Set;
 
 @Entity
 @Table(name = "books")
@@ -20,5 +21,7 @@ public class Book extends BaseEntity {
     @Column(nullable = false)
     @Positive
     private double rating;
+    @OneToMany(mappedBy = "books")
+    private Set<BorrowingRecord> borrowingRecords;
 
 }
