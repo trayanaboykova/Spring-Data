@@ -16,7 +16,7 @@ public class Book extends BaseEntity {
     @Column(nullable = false)
     private boolean available;
     @Enumerated(EnumType.STRING)
-    @Column(name = "book_genre", nullable = false)
+    @Column(name = "genre", nullable = false)
     private BookGenre bookGenre;
     @Column(nullable = false)
     @Positive

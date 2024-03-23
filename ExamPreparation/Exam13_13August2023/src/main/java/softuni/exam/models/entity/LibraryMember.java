@@ -12,7 +12,7 @@ public class LibraryMember extends BaseEntity {
     private String lastName;
     @Column
     private String address;
-    @Column(name = "phone_number", unique = true)
+    @Column(name = "phone_number", unique = true, nullable = false)
     private String phoneNumber;
     @OneToMany(mappedBy = "libraryMember")
     private Set<BorrowingRecord> borrowingRecords;
