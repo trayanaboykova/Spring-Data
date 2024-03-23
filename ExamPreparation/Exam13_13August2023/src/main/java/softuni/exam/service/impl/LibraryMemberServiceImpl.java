@@ -4,11 +4,8 @@ package softuni.exam.service.impl;
 import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import softuni.exam.models.dto.BookSeedDto;
 import softuni.exam.models.dto.LibraryMemberSeedDto;
-import softuni.exam.models.entity.Book;
 import softuni.exam.models.entity.LibraryMember;
-import softuni.exam.repository.BookRepository;
 import softuni.exam.repository.LibraryMemberRepository;
 import softuni.exam.service.LibraryMemberService;
 import softuni.exam.util.ValidationUtil;
@@ -52,7 +49,8 @@ public class LibraryMemberServiceImpl implements LibraryMemberService {
         LibraryMemberSeedDto[] libraryMemberSeedDtos = this.gson.fromJson(new FileReader(FILE_PATH), LibraryMemberSeedDto[].class);
 
         for (LibraryMemberSeedDto libraryMemberSeedDto : libraryMemberSeedDtos) {
-            Optional<LibraryMember> existingLibraryMember = this.libraryMemberRepository.findByName(libraryMemberSeedDto.getFirstName());
+            Optional<LibraryMember> existingLibraryMember = this.libraryMemberRepository.findByPhoneNumber(
+                    libraryMemberSeedDto.getPhoneNumber());
 
             if (!this.validationUtil.isValid(libraryMemberSeedDto) || existingLibraryMember.isPresent()) {
                 sb.append("Invalid library member.\n");
@@ -62,7 +60,7 @@ public class LibraryMemberServiceImpl implements LibraryMemberService {
             this.libraryMemberRepository.saveAndFlush(libraryMember);
 
             sb.append(String.format("Successfully imported library member - %s - %s\n",
-                    libraryMemberSeedDto.getFirstName(), libraryMemberSeedDto.getLastName()));
+                    libraryMember.getFirstName(), libraryMember.getLastName()));
         }
 
         return sb.toString();

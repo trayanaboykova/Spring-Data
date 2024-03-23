@@ -5,12 +5,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import softuni.exam.models.dto.BookSeedDto;
 import softuni.exam.models.entity.Book;
-import softuni.exam.models.entity.BookGenre;
+import softuni.exam.models.entity.Genre;
 import softuni.exam.repository.BookRepository;
 import softuni.exam.service.BookService;
 import softuni.exam.util.ValidationUtil;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,23 +45,24 @@ public class BookServiceImpl implements BookService {
     public String importBooks() throws IOException {
         StringBuilder sb = new StringBuilder();
 
-        BookSeedDto[] bookSeedDtos = this.gson.fromJson(new FileReader(FILE_PATH), BookSeedDto[].class);
+        BookSeedDto[] bookSeedDtos = this.gson.fromJson(readBooksFromFile(), BookSeedDto[].class);
 
         for (BookSeedDto bookSeedDto : bookSeedDtos) {
-            Optional<Book> existingBook = this.bookRepository.findByTitle(bookSeedDto.getTitle());
+            Optional<Book> existingBook = this.bookRepository.findBookByTitle(bookSeedDto.getTitle());
 
             if (!this.validationUtil.isValid(bookSeedDto) || existingBook.isPresent()) {
-                sb.append("Invalid book should be printed.\n");
+                sb.append("Invalid book\n");
                 continue;
             }
             Book book = this.modelMapper.map(bookSeedDto, Book.class);
-            book.setBookGenre(BookGenre.valueOf(bookSeedDto.getGenre()));
+            book.setBookGenre(Genre.valueOf(bookSeedDto.getGenre()));
             this.bookRepository.saveAndFlush(book);
 
             sb.append(String.format("Successfully imported book - %s - %s\n",
-                    bookSeedDto.getAuthor(), bookSeedDto.getTitle()));
+                    book.getAuthor(), book.getTitle()));
         }
 
         return sb.toString();
     }
+
 }

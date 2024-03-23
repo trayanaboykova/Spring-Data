@@ -1,6 +1,7 @@
 package softuni.exam.models.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -56,4 +57,5 @@ public class LibraryMember extends BaseEntity {
     public void setBorrowingRecords(Set<BorrowingRecord> borrowingRecords) {
         this.borrowingRecords = borrowingRecords;
     }
+
 }

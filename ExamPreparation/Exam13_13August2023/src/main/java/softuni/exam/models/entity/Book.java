@@ -2,6 +2,7 @@ package softuni.exam.models.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -17,7 +18,7 @@ public class Book extends BaseEntity {
     private boolean available;
     @Enumerated(EnumType.STRING)
     @Column(name = "genre", nullable = false)
-    private BookGenre bookGenre;
+    private Genre bookGenre;
     @Column(nullable = false)
     @Positive
     private double rating;
@@ -56,11 +57,11 @@ public class Book extends BaseEntity {
         this.available = available;
     }
 
-    public BookGenre getBookGenre() {
+    public Genre getBookGenre() {
         return bookGenre;
     }
 
-    public void setBookGenre(BookGenre bookGenre) {
+    public void setBookGenre(Genre bookGenre) {
         this.bookGenre = bookGenre;
     }
 
@@ -79,4 +80,5 @@ public class Book extends BaseEntity {
     public void setBorrowingRecords(Set<BorrowingRecord> borrowingRecords) {
         this.borrowingRecords = borrowingRecords;
     }
+
 }

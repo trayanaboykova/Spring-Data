@@ -1,6 +1,7 @@
 package softuni.exam.models.dto;
 
 import com.google.gson.annotations.Expose;
+import softuni.exam.models.entity.Genre;
 
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Exam12_29July2023.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/Lesson08_JSONProcessing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/BookGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/LibraryMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/LibraryMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/LibraryMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/LibraryMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/LibraryMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/LibraryMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/util/LocalDateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/util/LocalDateAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/util/ValidationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/util/ValidationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/util/ValidationUtilImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/util/ValidationUtilImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/ExamApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/ExamApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/ServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/ServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/config/ApplicationBeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/config/ApplicationBeanConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/dto/BookSeedDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/dto/BookSeedDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/dto/LibraryMemberSeedDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/dto/LibraryMemberSeedDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/BookGenre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/BorrowingRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/BorrowingRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/LibraryMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/LibraryMember.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BorrowingRecordRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BorrowingRecordRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/LibraryMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/LibraryMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/BorrowingRecordsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/BorrowingRecordsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/LibraryMemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/LibraryMemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BorrowingRecordsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BorrowingRecordsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/LibraryMemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/LibraryMemberServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/util/LocalDateAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/util/LocalDateAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/util/ValidationUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/util/ValidationUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/util/ValidationUtilImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/util/ValidationUtilImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/ExportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/ExportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/ImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/web/controllers/ImportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBookServiceAreImportedFalse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBookServiceAreImportedFalse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBookServiceAreImportedTrue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBookServiceAreImportedTrue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBorrowingRecordsServiceAreImportedFalse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBorrowingRecordsServiceAreImportedFalse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBorrowingRecordsServiceAreImportedTrue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestBorrowingRecordsServiceAreImportedTrue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestLibraryMemberServiceAreImportedFalse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestLibraryMemberServiceAreImportedFalse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestLibraryMemberServiceAreImportedTrue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/areImported/TestLibraryMemberServiceAreImportedTrue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbBooksTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbBooksTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbBorrowingRecordsTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbBorrowingRecordsTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbColumnNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbColumnNames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbForeignKeysAstronomers.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbForeignKeysAstronomers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbPrimaryKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbPrimaryKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbTablesNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestDbTablesNames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestLibraryMembersTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/database/TestLibraryMembersTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBookDuplicateEntries001.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBookDuplicateEntries001.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBookTitleSize002.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBookTitleSize002.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksAuthorSize003.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksAuthorSize003.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksDescriptionSize004.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksDescriptionSize004.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksRatingPositive005.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksRatingPositive005.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksZeroTest000.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Books/TestImportBooksZeroTest000.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsBookWithTitleNotExist001.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsBookWithTitleNotExist001.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsLibraryMemberWithIDNotExist002.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsLibraryMemberWithIDNotExist002.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsNullables004.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsNullables004.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsRemarkSize003.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsRemarkSize003.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsZeroTest000.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Borrowing_record/TestImportBorrowingRecordsZeroTest000.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberAddressSizeAndNull004.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberAddressSizeAndNull004.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberDuplicatePhoneNumber001.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberDuplicatePhoneNumber001.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberFirstNameSize002.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberFirstNameSize002.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberLastNameSize003.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberLastNameSize003.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberPhoneNumberSize005.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMemberPhoneNumberSize005.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMembersZeroTest000.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/import_Library_members/TestImportLibraryMembersZeroTest000.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/readFile/TestBookServiceReadFromFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/readFile/TestBookServiceReadFromFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/readFile/TestBorrowingRecordServiceReadFromFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/readFile/TestBorrowingRecordServiceReadFromFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/readFile/TestLibraryMemberServiceReadFileContent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/test-classes/softuni/exam/readFile/TestLibraryMemberServiceReadFileContent.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2e5gCb9zV3GGp6bE9MNlE8JZcqT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="ExamApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="exam" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="softuni.exam.ExamApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="" />
+      <created>1711199726259</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711199726259</updated>
+      <workItem from="1711199727331" duration="25000" />
+      <workItem from="1711200359797" duration="13000" />
+      <workItem from="1711201820671" duration="1328000" />
+      <workItem from="1711204669337" duration="319000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

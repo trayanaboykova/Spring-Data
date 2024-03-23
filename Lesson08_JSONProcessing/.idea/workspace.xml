@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36fb4369-4401-4975-a57b-fca7c9d57575" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/Exam12_29July2023.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamPreparation/Exam12_29July2023/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Lesson08_JSONProcessing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/models/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/models/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/models/entity/BookGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/models/entity/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/models/entity/LibraryMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/models/entity/LibraryMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/repository/LibraryMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/repository/LibraryMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/service/impl/LibraryMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/service/impl/LibraryMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/util/LocalDateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/src/main/java/softuni/exam/util/LocalDateAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/models/entity/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/models/entity/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/models/entity/BookGenre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/models/entity/LibraryMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/models/entity/LibraryMember.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/repository/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/repository/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/repository/LibraryMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/repository/LibraryMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/service/impl/LibraryMemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ExamPreparation/Exam13_13August2023/target/classes/softuni/exam/service/impl/LibraryMemberServiceImpl.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2e5ZQyf0GV34jciq61RYnICaJlp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.JsonProcessingLabApplication">
+    <configuration name="JsonProcessingExerciseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="JSONProcessing_Exercise" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.jsonprocessing_exercise.JsonProcessingExerciseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonProcessingLabApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="JSONProcessing_Lab" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bg.softuni.jsonprocessing_lab.JsonProcessingLabApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36fb4369-4401-4975-a57b-fca7c9d57575" name="Changes" comment="" />
+      <created>1711196386316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711196386316</updated>
+      <workItem from="1711196387417" duration="147000" />
+      <workItem from="1711201235625" duration="534000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
