@@ -19,4 +19,43 @@ public class BorrowingRecord extends BaseEntity {
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private LibraryMember libraryMember;
 
+    public LocalDate getBorrowDate() {
+        return borrowDate;
+    }
+
+    public void setBorrowDate(LocalDate borrowDate) {
+        this.borrowDate = borrowDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public Book getBooks() {
+        return books;
+    }
+
+    public void setBooks(Book books) {
+        this.books = books;
+    }
+
+    public LibraryMember getLibraryMember() {
+        return libraryMember;
+    }
+
+    public void setLibraryMember(LibraryMember libraryMember) {
+        this.libraryMember = libraryMember;
+    }
 }

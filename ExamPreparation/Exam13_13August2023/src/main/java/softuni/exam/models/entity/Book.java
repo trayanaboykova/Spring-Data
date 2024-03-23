@@ -24,4 +24,59 @@ public class Book extends BaseEntity {
     @OneToMany(mappedBy = "books")
     private Set<BorrowingRecord> borrowingRecords;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public BookGenre getBookGenre() {
+        return bookGenre;
+    }
+
+    public void setBookGenre(BookGenre bookGenre) {
+        this.bookGenre = bookGenre;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public Set<BorrowingRecord> getBorrowingRecords() {
+        return borrowingRecords;
+    }
+
+    public void setBorrowingRecords(Set<BorrowingRecord> borrowingRecords) {
+        this.borrowingRecords = borrowingRecords;
+    }
 }
