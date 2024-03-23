@@ -1,9 +1,10 @@
 package softuni.exam.service.impl;
 
+import org.springframework.stereotype.Service;
 import softuni.exam.service.BookService;
 
 import java.io.IOException;
-
+@Service
 public class BookServiceImpl implements BookService {
 
 

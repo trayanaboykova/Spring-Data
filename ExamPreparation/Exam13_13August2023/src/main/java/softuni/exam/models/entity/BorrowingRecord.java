@@ -13,7 +13,7 @@ public class BorrowingRecord extends BaseEntity {
     @Column
     private String remarks;
     @ManyToOne
-    @JoinColumn(name = "books_id", referencedColumnName = "id")
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book books;
     @ManyToOne
     @JoinColumn(name = "member_id", referencedColumnName = "id")
