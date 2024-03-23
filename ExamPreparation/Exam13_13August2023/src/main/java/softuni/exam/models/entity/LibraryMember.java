@@ -1,8 +1,7 @@
 package softuni.exam.models.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "library_members")
@@ -15,4 +14,6 @@ public class LibraryMember extends BaseEntity {
     private String address;
     @Column(name = "phone_number", unique = true)
     private String phoneNumber;
+    @OneToMany(mappedBy = "libraryMember")
+    private Set<BorrowingRecord> borrowingRecords;
 }
