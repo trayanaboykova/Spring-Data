@@ -10,7 +10,7 @@ public class BorrowingRecord extends BaseEntity {
     private LocalDate borrowDate;
     @Column(name = "return_date", nullable = false)
     private LocalDate returnDate;
-    @Column
+    @Column(name = "remarks")
     private String remarks;
     @ManyToOne
     @JoinColumn(name = "book_id", referencedColumnName = "id")

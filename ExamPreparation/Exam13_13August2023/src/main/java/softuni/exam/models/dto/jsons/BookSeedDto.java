@@ -1,4 +1,4 @@
-package softuni.exam.models.dto;
+package softuni.exam.models.dto.jsons;
 
 import com.google.gson.annotations.Expose;
 import softuni.exam.models.entity.Genre;
@@ -17,7 +17,7 @@ public class BookSeedDto implements Serializable {
     @Size(min = 5)
     private String description;
     @Expose
-    private String genre;
+    private Genre genre;
     @Expose
     @Size(min = 3, max = 40)
     private String title;
@@ -52,11 +52,11 @@ public class BookSeedDto implements Serializable {
         this.description = description;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 

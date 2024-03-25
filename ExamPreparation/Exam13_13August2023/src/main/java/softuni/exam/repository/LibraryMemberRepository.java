@@ -9,6 +9,8 @@ import java.util.Optional;
 @Repository
 public interface LibraryMemberRepository extends JpaRepository<LibraryMember, Long> {
 
-    Optional<LibraryMember> findByPhoneNumber(String phoneNumber);
+    Optional<LibraryMember> findAllByPhoneNumber(String phoneNumber);
+
+    Optional<LibraryMember> findMemberById(long memberID);
 
 }

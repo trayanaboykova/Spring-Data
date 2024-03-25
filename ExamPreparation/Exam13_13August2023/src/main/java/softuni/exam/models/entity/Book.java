@@ -18,7 +18,7 @@ public class Book extends BaseEntity {
     private boolean available;
     @Enumerated(EnumType.STRING)
     @Column(name = "genre", nullable = false)
-    private Genre bookGenre;
+    private Genre genre;
     @Column(nullable = false)
     @Positive
     private double rating;
@@ -61,11 +61,11 @@ public class Book extends BaseEntity {
     }
 
     public Genre getBookGenre() {
-        return bookGenre;
+        return genre;
     }
 
     public void setBookGenre(Genre bookGenre) {
-        this.bookGenre = bookGenre;
+        this.genre = bookGenre;
     }
 
     public double getRating() {

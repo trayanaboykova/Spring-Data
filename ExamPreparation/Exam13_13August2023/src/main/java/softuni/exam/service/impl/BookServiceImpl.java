@@ -3,7 +3,7 @@ package softuni.exam.service.impl;
 import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import softuni.exam.models.dto.BookSeedDto;
+import softuni.exam.models.dto.jsons.BookSeedDto;
 import softuni.exam.models.entity.Book;
 import softuni.exam.models.entity.Genre;
 import softuni.exam.repository.BookRepository;
@@ -55,7 +55,6 @@ public class BookServiceImpl implements BookService {
                 continue;
             }
             Book book = this.modelMapper.map(bookSeedDto, Book.class);
-            book.setBookGenre(Genre.valueOf(bookSeedDto.getGenre()));
             this.bookRepository.saveAndFlush(book);
 
             sb.append(String.format("Successfully imported book %s - %s\n",

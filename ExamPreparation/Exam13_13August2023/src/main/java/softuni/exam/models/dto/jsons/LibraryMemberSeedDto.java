@@ -1,7 +1,8 @@
-package softuni.exam.models.dto;
+package softuni.exam.models.dto.jsons;
 
 import com.google.gson.annotations.Expose;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ public class LibraryMemberSeedDto implements Serializable {
     private String address;
     @Expose
     @Size(min = 2, max = 30)
+    @NotNull
     private String firstName;
     @Expose
     @Size(min = 2, max = 30)

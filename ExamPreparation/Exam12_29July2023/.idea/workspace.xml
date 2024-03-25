@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="" />
+    <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/constants/Messages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/xmls/BookDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/xmls/BorrowingRecordRootDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/xmls/BorrowingRecordSeedDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/xmls/LibraryMemberDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/BookSeedDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/jsons/BookSeedDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/LibraryMemberSeedDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/dto/jsons/LibraryMemberSeedDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/models/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BorrowingRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BorrowingRecordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/LibraryMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/LibraryMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BorrowingRecordsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BorrowingRecordsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/LibraryMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/LibraryMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/dto/BookSeedDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/dto/LibraryMemberSeedDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/models/entity/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/LibraryMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/LibraryMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BorrowingRecordsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BorrowingRecordsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/LibraryMemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/LibraryMemberServiceImpl.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +82,11 @@
       <workItem from="1711201820671" duration="1328000" />
       <workItem from="1711204669337" duration="319000" />
       <workItem from="1711205429351" duration="1487000" />
+      <workItem from="1711359387186" duration="1863000" />
+      <workItem from="1711363600424" duration="724000" />
+      <workItem from="1711366394573" duration="20000" />
+      <workItem from="1711376072699" duration="32000" />
+      <workItem from="1711385883386" duration="640000" />
     </task>
     <servers />
   </component>
