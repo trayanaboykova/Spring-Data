@@ -25,6 +25,9 @@ public class BookSeedDto implements Serializable {
     @Positive
     private double rating;
 
+    public BookSeedDto() {
+    }
+
     public String getAuthor() {
         return author;
     }

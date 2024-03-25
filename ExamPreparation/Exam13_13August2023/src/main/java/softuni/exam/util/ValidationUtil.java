@@ -1,8 +1,8 @@
 package softuni.exam.util;
 
-import java.util.Set;
+
 
 public interface ValidationUtil {
-    <E> boolean isValid(E e);
+    <E> boolean isValid(E entity);
 
 }

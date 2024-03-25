@@ -48,7 +48,7 @@ public class BookServiceImpl implements BookService {
         BookSeedDto[] bookSeedDtos = this.gson.fromJson(readBooksFromFile(), BookSeedDto[].class);
 
         for (BookSeedDto bookSeedDto : bookSeedDtos) {
-            Optional<Book> existingBook = this.bookRepository.findBookByTitle(bookSeedDto.getTitle());
+            Optional<Book> existingBook = this.bookRepository.findByTitle(bookSeedDto.getTitle());
 
             if (!this.validationUtil.isValid(bookSeedDto) || existingBook.isPresent()) {
                 sb.append("Invalid book\n");
@@ -58,7 +58,7 @@ public class BookServiceImpl implements BookService {
             book.setBookGenre(Genre.valueOf(bookSeedDto.getGenre()));
             this.bookRepository.saveAndFlush(book);
 
-            sb.append(String.format("Successfully imported book - %s - %s\n",
+            sb.append(String.format("Successfully imported book %s - %s\n",
                     book.getAuthor(), book.getTitle()));
         }
 

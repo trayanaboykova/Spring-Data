@@ -25,6 +25,9 @@ public class Book extends BaseEntity {
     @OneToMany(mappedBy = "books")
     private Set<BorrowingRecord> borrowingRecords;
 
+    public Book() {
+    }
+
     public String getTitle() {
         return title;
     }
