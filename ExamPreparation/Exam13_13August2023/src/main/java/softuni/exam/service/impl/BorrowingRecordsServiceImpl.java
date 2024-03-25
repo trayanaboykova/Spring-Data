@@ -17,14 +17,11 @@ import softuni.exam.util.ValidationUtil;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,7 +34,6 @@ public class BorrowingRecordsServiceImpl implements BorrowingRecordsService {
     private final LibraryMemberRepository libraryMemberRepository;
     private final ValidationUtil validationUtil;
     private final ModelMapper modelMapper;
-    private final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public BorrowingRecordsServiceImpl(BorrowingRecordRepository borrowingRecordRepository, BookRepository bookRepository, LibraryMemberRepository libraryMemberRepository, ValidationUtil validationUtil, ModelMapper modelMapper) {
         this.borrowingRecordRepository = borrowingRecordRepository;
