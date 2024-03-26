@@ -7,6 +7,7 @@ import softuni.exam.models.dto.xmls.BorrowingRecordRootDto;
 import softuni.exam.models.dto.xmls.BorrowingRecordSeedDto;
 import softuni.exam.models.entity.Book;
 import softuni.exam.models.entity.BorrowingRecord;
+import softuni.exam.models.entity.Genre;
 import softuni.exam.models.entity.LibraryMember;
 import softuni.exam.repository.BookRepository;
 import softuni.exam.repository.BorrowingRecordRepository;
@@ -22,10 +23,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @Service
 public class BorrowingRecordsServiceImpl implements BorrowingRecordsService {
@@ -67,7 +67,7 @@ public class BorrowingRecordsServiceImpl implements BorrowingRecordsService {
             String title = borrowingRecordSeedDto.getBook().getTitle();
             Optional<Book> optionalBook = this.bookRepository.findAllByTitle(title);
 
-            long memberID = borrowingRecordSeedDto.getMember().getId();
+            long memberID = borrowingRecordSeedDto.getLibraryMembers().getId();
             Optional<LibraryMember> optionalLibraryMember = this.libraryMemberRepository.findMemberById(memberID);
 
             if (!this.validationUtil.isValid(borrowingRecordSeedDto) || optionalBook.isEmpty() || optionalLibraryMember.isEmpty()) {
@@ -91,6 +91,22 @@ public class BorrowingRecordsServiceImpl implements BorrowingRecordsService {
 
     @Override
     public String exportBorrowingRecords() {
-        return null;
+
+        StringBuilder sb = new StringBuilder();
+        List<BorrowingRecord> records = borrowingRecordRepository
+                .findAllByBooksGenreAndBorrowDateBefore(Genre.SCIENCE_FICTION, LocalDate.of(2021, 9, 10));
+
+        for (BorrowingRecord record : records) {
+           Book book = record.getBooks();
+           LibraryMember libraryMember = record.getLibraryMember();
+            sb.append(String.format("Book title: %s\n", book.getTitle()));
+            sb.append(String.format("*Book author: %s\n", book.getAuthor()));
+            sb.append(String.format("**Date borrowed: %s\n", record.getBorrowDate()));
+            sb.append(String.format("***Borrowed by: %s %s\n",
+                    libraryMember.getFirstName(),
+                    libraryMember.getLastName()));
+        }
+
+        return sb.toString().trim();
     }
 }
