@@ -62,20 +62,20 @@ public class BorrowingRecordsServiceImpl implements BorrowingRecordsService {
         Unmarshaller unmarshaller = context.createUnmarshaller();
         BorrowingRecordRootDto borrowingRootDto = (BorrowingRecordRootDto) unmarshaller.unmarshal(new File(FILE_PATH));
 
-        for (BorrowingRecordSeedDto borrowingDto : borrowingRootDto.getBorrowingRecords()) {
+        for (BorrowingRecordSeedDto borrowingRecordSeedDto : borrowingRootDto.getBorrowingRecords()) {
 
-            String title = borrowingDto.getBook().getTitle();
+            String title = borrowingRecordSeedDto.getBook().getTitle();
             Optional<Book> optionalBook = this.bookRepository.findAllByTitle(title);
 
-            long memberID = borrowingDto.getMember().getId();
+            long memberID = borrowingRecordSeedDto.getMember().getId();
             Optional<LibraryMember> optionalLibraryMember = this.libraryMemberRepository.findMemberById(memberID);
 
-            if (!this.validationUtil.isValid(borrowingDto) || optionalBook.isEmpty() || optionalLibraryMember.isEmpty()) {
+            if (!this.validationUtil.isValid(borrowingRecordSeedDto) || optionalBook.isEmpty() || optionalLibraryMember.isEmpty()) {
                 sb.append("Invalid borrowing record\n");
                 continue;
             }
 
-            BorrowingRecord borrowingRecord = modelMapper.map(borrowingDto, BorrowingRecord.class);
+            BorrowingRecord borrowingRecord = modelMapper.map(borrowingRecordSeedDto, BorrowingRecord.class);
             borrowingRecord.setBooks(optionalBook.get());
             borrowingRecord.setLibraryMember(optionalLibraryMember.get());
 
