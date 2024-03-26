@@ -5,13 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BorrowingRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/repository/BorrowingRecordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BorrowingRecordsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/main/java/softuni/exam/service/impl/BorrowingRecordsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/test/java/softuni/exam/export/TestBorrowingRecordsServiceExport000.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/test/java/softuni/exam/export/TestBorrowingRecordsServiceExport000.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/src/test/java/softuni/exam/export/TestBorrowingRecordsServiceExport001.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/src/test/java/softuni/exam/export/TestBorrowingRecordsServiceExport001.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BorrowingRecordRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/repository/BorrowingRecordRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BorrowingRecordsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam13_13August2023/target/classes/softuni/exam/service/impl/BorrowingRecordsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/models/dto/jsons/CountrySeedDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/models/entity/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/models/entity/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/models/entity/Job.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/models/entity/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/models/entity/StatusType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/service/impl/CompanyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/service/impl/CountryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/service/impl/JobServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/service/impl/PersonServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/util/LocalDateAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/util/ValidationUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/util/ValidationUtilImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/JobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/JobRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/PersonRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +91,7 @@
       <workItem from="1711385883386" duration="640000" />
       <workItem from="1711439527664" duration="2994000" />
       <workItem from="1711442731840" duration="801000" />
+      <workItem from="1711460166816" duration="12000" />
     </task>
     <servers />
   </component>
