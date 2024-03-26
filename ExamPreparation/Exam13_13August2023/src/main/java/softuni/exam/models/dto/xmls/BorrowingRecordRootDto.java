@@ -5,22 +5,23 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @XmlRootElement(name = "borrowing_records")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BorrowingRecordRootDto implements Serializable {
     @XmlElement(name = "borrowing_record")
-    private Set<BorrowingRecordSeedDto> borrowingRecords;
+    private List<BorrowingRecordSeedDto> borrowingRecords;
 
     public BorrowingRecordRootDto() {
     }
 
-    public Set<BorrowingRecordSeedDto> getBorrowingRecords() {
+    public List<BorrowingRecordSeedDto> getBorrowingRecords() {
         return borrowingRecords;
     }
 
-    public void setBorrowingRecords(Set<BorrowingRecordSeedDto> borrowingRecords) {
+    public void setBorrowingRecords(List<BorrowingRecordSeedDto> borrowingRecords) {
         this.borrowingRecords = borrowingRecords;
     }
 }

@@ -4,6 +4,7 @@ package softuni.exam.models.dto.xmls;
 import softuni.exam.util.LocalDateAdapter;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -16,9 +17,11 @@ import java.time.LocalDate;
 @XmlRootElement(name = "borrowing_record")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BorrowingRecordSeedDto implements Serializable {
+    @NotNull
     @XmlElement(name = "borrow_date")
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
     private LocalDate borrowDate;
+    @NotNull
     @XmlElement(name = "return_date")
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
     private LocalDate returnDate;

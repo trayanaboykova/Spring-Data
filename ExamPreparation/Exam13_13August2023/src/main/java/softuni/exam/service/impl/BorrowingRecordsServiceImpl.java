@@ -24,6 +24,7 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -57,63 +58,35 @@ public class BorrowingRecordsServiceImpl implements BorrowingRecordsService {
     public String importBorrowingRecords() throws IOException, JAXBException {
         StringBuilder sb = new StringBuilder();
 
-            JAXBContext context = JAXBContext.newInstance(BorrowingRecordRootDto.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
+        JAXBContext context = JAXBContext.newInstance(BorrowingRecordRootDto.class);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        BorrowingRecordRootDto borrowingRootDto = (BorrowingRecordRootDto) unmarshaller.unmarshal(new File(FILE_PATH));
 
-            BorrowingRecordRootDto borrowingRootDto = (BorrowingRecordRootDto) unmarshaller.unmarshal(new File(FILE_PATH));
+        for (BorrowingRecordSeedDto borrowingDto : borrowingRootDto.getBorrowingRecords()) {
 
-            List<BorrowingRecordSeedDto> sortedRecords = borrowingRootDto
-                    .getBorrowingRecords()
-                    .stream()
-                    .sorted(Comparator.comparing(borrowingRecord -> borrowingRecord.getMember().getId()))
-                    .collect(Collectors.toList());
+            String title = borrowingDto.getBook().getTitle();
+            Optional<Book> optionalBook = this.bookRepository.findAllByTitle(title);
 
-            for (BorrowingRecordSeedDto borrowingDto : sortedRecords) {
-                if (borrowingDto.getBorrowDate() == null) {
-                    sb.append("Invalid borrowing record\n");
-                    continue;
-                }
-                if (borrowingDto.getReturnDate() == null) {
-                    borrowingDto.setReturnDate(LocalDate.now());
-                    continue;
-                }
+            long memberID = borrowingDto.getMember().getId();
+            Optional<LibraryMember> optionalLibraryMember = this.libraryMemberRepository.findMemberById(memberID);
 
-                boolean isValid = this.validationUtil.isValid(borrowingDto);
-
-                Book book = this.bookRepository
-                        .findAllByTitle(borrowingDto.getBook().getTitle())
-                        .orElse(null);
-
-                LibraryMember member = this.libraryMemberRepository
-                        .findMemberById(borrowingDto.getMember().getId())
-                        .orElse(null);
-
-                if (book == null || member == null) {
-                    isValid = false;
-                }
-
-                if (isValid) {
-                    sb.append(String.format("Successfully imported borrowing record %s - %s\n",
-                            borrowingDto.getBook().getTitle(),
-                            borrowingDto.getBorrowDate()));
-
-                    LocalDate borrowDate = borrowingDto.getBorrowDate();
-                    LocalDate returnDate = borrowingDto.getReturnDate();
-
-                    BorrowingRecord record = this.modelMapper.map(borrowingDto, BorrowingRecord.class);
-                    record.setBooks(book);
-                    record.setLibraryMember(member);
-                    record.setBorrowDate(borrowDate);
-                    record.setReturnDate(returnDate);
-
-                    this.borrowingRecordRepository.saveAndFlush(record);
-                }
-                else {
-                    sb.append("Invalid borrowing record\n");
-                }
+            if (!this.validationUtil.isValid(borrowingDto) || optionalBook.isEmpty() || optionalLibraryMember.isEmpty()) {
+                sb.append("Invalid borrowing record\n");
+                continue;
             }
 
+            BorrowingRecord borrowingRecord = modelMapper.map(borrowingDto, BorrowingRecord.class);
+            borrowingRecord.setBooks(optionalBook.get());
+            borrowingRecord.setLibraryMember(optionalLibraryMember.get());
+
+            this.borrowingRecordRepository.saveAndFlush(borrowingRecord);
+            sb.append(String.format("Successfully imported borrowing record %s - %s\n",
+                    borrowingRecord.getBooks().getTitle(),
+                    borrowingRecord.getBorrowDate()));
+
+        }
         return sb.toString();
+
     }
 
     @Override
