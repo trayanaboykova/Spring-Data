@@ -1,10 +1,6 @@
 package softuni.exam.models.dto.jsons;
 
 import com.google.gson.annotations.Expose;
-import softuni.exam.models.entity.Country;
-import softuni.exam.models.entity.StatusType;
-
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -28,10 +24,10 @@ public class PersonSeedDto implements Serializable {
     private String phone;
     @Expose
     @NotNull
-    private StatusType statusType;
+    private String statusType;
     @Expose
     @NotNull
-    private Country country;
+    private String country;
 
     public PersonSeedDto() {
     }
@@ -68,19 +64,19 @@ public class PersonSeedDto implements Serializable {
         this.phone = phone;
     }
 
-    public StatusType getStatusType() {
+    public String getStatusType() {
         return statusType;
     }
 
-    public void setStatusType(StatusType statusType) {
+    public void setStatusType(String statusType) {
         this.statusType = statusType;
     }
 
-    public Country getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 }
