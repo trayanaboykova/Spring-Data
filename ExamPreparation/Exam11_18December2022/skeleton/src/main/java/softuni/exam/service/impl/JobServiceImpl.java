@@ -87,9 +87,6 @@ public class JobServiceImpl implements JobService {
 
             Job job = this.modelMapper.map(jobSeedDto, Job.class);
 
-           // long companyIdFromDto = jobSeedDto.getCompanyId();
-          //  Optional<Company> existingCompany = companyRepository.findById(companyIdFromDto);
-
             Optional<Company> existingCompany = companyRepository.findAllById(jobSeedDto.getCompanyId());
 
             if (existingCompany.isPresent()) {
@@ -107,6 +104,18 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public String getBestJobs() {
-        return null;
+        StringBuilder jobsDetails = new StringBuilder();
+
+        List<Job> bestJobs = jobRepository.findBestJobs();
+
+        for(Job job : bestJobs){
+            String jobDetail = "Job title " + job.getTitle() + "\n" +
+                    "   -Salary: " + String.format("%.2f", job.getSalary()) + "$\n" +
+                    "   --Hours a week: " + String.format("%.2f", job.getHoursAWeek()) + "h.\n";
+
+            jobsDetails.append(jobDetail);
+        }
+
+        return jobsDetails.toString();
     }
 }
