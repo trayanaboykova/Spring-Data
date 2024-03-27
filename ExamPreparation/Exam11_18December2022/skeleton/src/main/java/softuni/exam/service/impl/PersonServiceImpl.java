@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import softuni.exam.models.dto.jsons.PersonSeedDto;
 import softuni.exam.models.entity.Country;
 import softuni.exam.models.entity.Person;
+import softuni.exam.models.entity.StatusType;
 import softuni.exam.repository.CountryRepository;
 import softuni.exam.repository.PersonRepository;
 import softuni.exam.service.PersonService;
@@ -13,13 +14,14 @@ import softuni.exam.util.ValidationUtil;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
-import java.util.Arrays;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class PersonServiceImpl implements PersonService {
+    private static final String FILE_PATH = "src/main/resources/files/json/people.json";
     private final PersonRepository personRepository;
     private final CountryRepository countryRepository;
     private final Gson gson;
@@ -43,47 +45,46 @@ public class PersonServiceImpl implements PersonService {
     public String readPeopleFromFile() throws IOException {
         InputStream is = getClass().getResourceAsStream("/files/json/people.json");
         if (is == null) {
-            throw new IllegalStateException("Can't find file countries.json in classpath");
+            throw new IllegalStateException("Can't find file people.json in classpath");
         }
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
             return reader.lines().collect(Collectors.joining(System.lineSeparator()));
         } catch (IOException e) {
-            throw new UncheckedIOException("Error occurred while reading file countries.json", e);
+            throw new UncheckedIOException("Error occurred while reading file people.json", e);
         }
     }
 
     @Override
     public String importPeople() throws IOException, JAXBException {
+
         StringBuilder sb = new StringBuilder();
 
-        List<PersonSeedDto> peopleSeedDTOs = Arrays.stream(gson.fromJson(readPeopleFromFile(), PersonSeedDto[].class))
-                .toList();
+        PersonSeedDto[] personSeedDtos = gson.fromJson(readPeopleFromFile(), PersonSeedDto[].class);
 
-        for (PersonSeedDto personSeedDto : peopleSeedDTOs) {
-            Optional<Person> existingPerson = findPersonByFirstNameEmailAndPhone(personSeedDto.getFirstName(),
-                    personSeedDto.getEmail(),
-                    personSeedDto.getPhone());
-            Optional<Country> existingCountry = countryRepository.findById(Long.valueOf(personSeedDto.getCountry()));
+        for (PersonSeedDto personSeedDto : personSeedDtos) {
 
-            if (existingPerson.isPresent()) {
+            boolean doesPersonExist = personRepository.existsByFirstNameOrEmailOrPhone(
+                    personSeedDto.getFirstName(), personSeedDto.getEmail(), personSeedDto.getPhone());
+
+            if (!validationUtil.isValid(personSeedDto) || doesPersonExist) {
                 sb.append("Invalid person\n");
-            } else if (existingCountry.isEmpty()) {
-                sb.append("Invalid person\n");
-            } else if (!validationUtil.isValid(personSeedDto)) {
-                sb.append("Invalid person\n");
-            } else {
-                Person personToSave = modelMapper.map(personSeedDto, Person.class);
-                personToSave.setCountry(existingCountry.get());
-                this.personRepository.saveAndFlush(personToSave);
-                sb.append(String.format("Successfully imported person %s %s%n", personToSave.getFirstName(), personToSave.getLastName()));
+                continue;
+            }
+            Person person = modelMapper.map(personSeedDto, Person.class);
+            person.setStatusType(StatusType.valueOf(personSeedDto.getStatusType()));
+            Optional<Country> country = countryRepository.findById(Long.valueOf(personSeedDto.getCountry()));
+            if (country.isPresent()) {
+                person.setCountry(country.get());
+
+                personRepository.saveAndFlush(person);
+
+                sb.append(String.format("Successfully imported person %s - %s\n",
+                        personSeedDto.getFirstName(),
+                        personSeedDto.getLastName()));
             }
         }
+
         return sb.toString();
     }
-
-    private Optional<Person> findPersonByFirstNameEmailAndPhone(String firstName, String email, String phone) {
-        return this.personRepository.findPersonByFirstNameOrEmailOrPhone(firstName, email, phone);
-    }
-
 }

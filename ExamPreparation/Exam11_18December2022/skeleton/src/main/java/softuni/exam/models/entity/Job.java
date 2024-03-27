@@ -25,7 +25,6 @@ public class Job extends BaseEntity {
     @JoinTable(name = "companies_jobs",
             joinColumns = @JoinColumn(name = "jobs_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "company_id", referencedColumnName = "id"))
-    @NotNull
     private List<Company> companyList;
 
     public Job() {
