@@ -1,10 +1,13 @@
 package softuni.exam.service.impl;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import softuni.exam.models.dto.xmls.CarRootDto;
 import softuni.exam.models.dto.xmls.CarSeedDto;
 import softuni.exam.models.entity.Car;
+import softuni.exam.models.entity.CarType;
 import softuni.exam.repository.CarsRepository;
 import softuni.exam.service.CarsService;
 import softuni.exam.util.ValidationUtil;
@@ -15,7 +18,9 @@ import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CarsServiceImpl implements CarsService {
@@ -38,6 +43,17 @@ public class CarsServiceImpl implements CarsService {
 
     @Override
     public String readCarsFromFile() throws IOException {
+//        Resource resource = resourceLoader.getResource("classpath:files/xml/cars.xml");
+//        InputStream is = resource.getInputStream();
+//        if (is == null) {
+//            throw new IllegalStateException("Can't find file cars.xml in classpath");
+//        }
+//
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+//        } catch (IOException e) {
+//            throw new UncheckedIOException("Error occurred while reading file cars.xml", e);
+//        }
         return Files.readString(Path.of(CARS_FILE_PATH));
     }
 
@@ -47,13 +63,17 @@ public class CarsServiceImpl implements CarsService {
 
         JAXBContext context = JAXBContext.newInstance(CarRootDto.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
+
+//        InputStream is = resourceLoader.getResource("classpath:files/xml/cars.xml").getInputStream();
+//        CarRootDto carRootDto = (CarRootDto) unmarshaller.unmarshal(new InputStreamReader(is));
+
         CarRootDto carRootDto = (CarRootDto) unmarshaller.unmarshal(new File(CARS_FILE_PATH));
 
+        List<CarSeedDto> carSeedDtos = carRootDto.getCars();
 
-        for (CarSeedDto carSeedDto : carRootDto.getCars()) {
+        for (CarSeedDto carSeedDto : carSeedDtos) {
 
             String existingPlateNumber = carSeedDto.getPlateNumber();
-
             Optional<Car> carByPlateNumber = this.carRepository.findByPlateNumber(existingPlateNumber);
 
             if (!this.validationUtil.isValid(carSeedDto) || carByPlateNumber.isPresent()) {
@@ -62,6 +82,7 @@ public class CarsServiceImpl implements CarsService {
             }
 
             Car car = this.modelMapper.map(carSeedDto, Car.class);
+            car.setCarType(CarType.valueOf(carSeedDto.getCarType()));
 
             this.carRepository.saveAndFlush(car);
 

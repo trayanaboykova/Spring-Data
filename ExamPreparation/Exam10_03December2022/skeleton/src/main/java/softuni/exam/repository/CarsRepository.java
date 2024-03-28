@@ -12,4 +12,5 @@ public interface CarsRepository extends JpaRepository<Car, Long> {
 
     Optional<Car> findByPlateNumber(String existingPlateNumber);
 
+    Optional<Car> findByCarMake(String existingCarMake);
 }
