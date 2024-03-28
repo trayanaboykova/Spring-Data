@@ -66,7 +66,6 @@ public class CompanyServiceImpl implements CompanyService {
         JAXBContext context = JAXBContext.newInstance(CompanyRootDto.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
 
-
         InputStream is = resourceLoader.getResource("classpath:files/xml/companies.xml").getInputStream();
         CompanyRootDto companyRootDto = (CompanyRootDto) unmarshaller.unmarshal(new InputStreamReader(is));
 
