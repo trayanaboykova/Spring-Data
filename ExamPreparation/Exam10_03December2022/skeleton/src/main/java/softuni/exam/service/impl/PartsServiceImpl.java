@@ -13,6 +13,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PartsServiceImpl implements PartsService {
@@ -36,17 +37,17 @@ public class PartsServiceImpl implements PartsService {
 
     @Override
     public String readPartsFileContent() throws IOException {
-//        InputStream is = getClass().getResourceAsStream("/files/json/parts.json");
-//        if (is == null) {
-//            throw new IllegalStateException("Can't find file parts.json in classpath");
-//        }
-//
-//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-//        } catch (IOException e) {
-//            throw new UncheckedIOException("Error occurred while reading file parts.json", e);
-//        }
-        return Files.readString(Path.of(PARTS_FILE_PATH));
+        InputStream is = getClass().getResourceAsStream("/files/json/parts.json");
+        if (is == null) {
+            throw new IllegalStateException("Can't find file parts.json in classpath");
+        }
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+        } catch (IOException e) {
+            throw new UncheckedIOException("Error occurred while reading file parts.json", e);
+        }
+//        return Files.readString(Path.of(PARTS_FILE_PATH));
     }
 
     @Override

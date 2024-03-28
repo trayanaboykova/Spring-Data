@@ -76,7 +76,7 @@ public class CompanyServiceImpl implements CompanyService {
             String companyName = companySeedDto.getName();
 
             Optional<Company> existingCompany = this.companyRepository
-                    .findCompanyByName(companyName);
+                    .findByName(companyName);
 
             if (!this.validationUtil.isValid(companySeedDto) || existingCompany.isPresent()) {
                 sb.append("Invalid company\n");
