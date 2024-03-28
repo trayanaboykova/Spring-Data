@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/repository/CarsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/repository/CarsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/CarsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/CarsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/PartsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/PartsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/util/XmlParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/util/XmlParserImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/repository/CarsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/repository/CarsRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/CarsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/CarsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/MechanicsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/MechanicsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/PartsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/PartsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/util/XMLParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/repository/CompanyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/service/impl/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam11_18December2022/skeleton/src/main/java/softuni/exam/service/impl/CompanyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +73,8 @@
       <workItem from="1711619864617" duration="696000" />
       <workItem from="1711627420857" duration="17000" />
       <workItem from="1711636462354" duration="310000" />
+      <workItem from="1711637639349" duration="4000" />
+      <workItem from="1711637852067" duration="10000" />
     </task>
     <servers />
   </component>
