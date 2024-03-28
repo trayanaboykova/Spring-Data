@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/models/dto/jsons/MechanicsSeedDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/models/dto/jsons/PartSeedDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/config/ApplicationBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/config/ApplicationBeanConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/repository/PartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/repository/PartsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/CarsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/CarsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/MechanicsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/MechanicsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/PartsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/PartsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/TasksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/TasksService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/PartsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/PartsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/config/ApplicationBeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/config/ApplicationBeanConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/repository/PartsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/repository/PartsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/PartsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/PartsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +68,7 @@
       <workItem from="1711460166816" duration="12000" />
       <workItem from="1711552837049" duration="2000" />
       <workItem from="1711619864617" duration="696000" />
+      <workItem from="1711627420857" duration="17000" />
     </task>
     <servers />
   </component>
