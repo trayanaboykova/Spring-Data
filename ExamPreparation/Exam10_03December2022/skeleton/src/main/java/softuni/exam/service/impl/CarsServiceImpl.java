@@ -1,8 +1,8 @@
 package softuni.exam.service.impl;
 
 import org.springframework.stereotype.Service;
-import softuni.exam.repository.CarRepository;
-import softuni.exam.service.CarService;
+import softuni.exam.repository.CarsRepository;
+import softuni.exam.service.CarsService;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
@@ -10,11 +10,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @Service
-public class CarServiceImpl implements CarService {
+public class CarsServiceImpl implements CarsService {
     private static final String CARS_FILE_PATH = "src/main/resources/files/xml/cars.xml";
-    private final CarRepository carRepository;
+    private final CarsRepository carRepository;
 
-    public CarServiceImpl(CarRepository carRepository) {
+    public CarsServiceImpl(CarsRepository carRepository) {
         this.carRepository = carRepository;
     }
 

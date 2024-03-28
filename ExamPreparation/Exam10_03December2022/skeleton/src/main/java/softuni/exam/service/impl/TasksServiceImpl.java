@@ -1,8 +1,8 @@
 package softuni.exam.service.impl;
 
 import org.springframework.stereotype.Service;
-import softuni.exam.repository.TaskRepository;
-import softuni.exam.service.TaskService;
+import softuni.exam.repository.TasksRepository;
+import softuni.exam.service.TasksService;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
@@ -10,11 +10,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @Service
-public class TaskServiceImpl implements TaskService {
+public class TasksServiceImpl implements TasksService {
     private static final String TASKS_FILE_PATH = "src/main/resources/files/xml/tasks.xml";
-    private final TaskRepository taskRepository;
+    private final TasksRepository taskRepository;
 
-    public TaskServiceImpl(TaskRepository taskRepository) {
+    public TasksServiceImpl(TasksRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
 

@@ -2,10 +2,10 @@ package softuni.exam.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import softuni.exam.models.entity.Part;
+import softuni.exam.models.entity.Mechanic;
 
 @Repository
-public interface PartRepository extends JpaRepository<Part, Long> {
+public interface MechanicsRepository extends JpaRepository<Mechanic, Long> {
 
 
 }

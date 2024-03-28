@@ -1,5 +1,5 @@
 package softuni.exam.models.entity;
 
-public enum Genre {
+public enum CarType {
     SUV, coupe, sport
 }

@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import softuni.exam.models.entity.Car;
 
 @Repository
-public interface CarRepository extends JpaRepository<Car, Long> {
+public interface CarsRepository extends JpaRepository<Car, Long> {
 
 }

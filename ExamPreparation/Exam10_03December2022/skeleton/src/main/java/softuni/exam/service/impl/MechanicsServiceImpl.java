@@ -1,19 +1,19 @@
 package softuni.exam.service.impl;
 
 import org.springframework.stereotype.Service;
-import softuni.exam.repository.MechanicRepository;
-import softuni.exam.service.MechanicService;
+import softuni.exam.repository.MechanicsRepository;
+import softuni.exam.service.MechanicsService;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 @Service
-public class MechanicServiceImpl implements MechanicService {
+public class MechanicsServiceImpl implements MechanicsService {
     private static final String MECHANICS_FILE_PATH = "src/main/resources/files/json/mechanics.json";
-    private final MechanicRepository mechanicRepository;
+    private final MechanicsRepository mechanicRepository;
 
-    public MechanicServiceImpl(MechanicRepository mechanicRepository) {
+    public MechanicsServiceImpl(MechanicsRepository mechanicRepository) {
         this.mechanicRepository = mechanicRepository;
     }
 

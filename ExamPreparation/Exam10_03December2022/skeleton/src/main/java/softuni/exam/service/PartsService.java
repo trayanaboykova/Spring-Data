@@ -3,7 +3,7 @@ package softuni.exam.service;
 import java.io.IOException;
 
 // TODO: Implement all methods
-public interface PartService {
+public interface PartsService {
 
     boolean areImported();
 
