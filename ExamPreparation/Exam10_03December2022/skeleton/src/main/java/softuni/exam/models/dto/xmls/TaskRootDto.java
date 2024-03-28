@@ -7,20 +7,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.List;
 
-@XmlRootElement(name = "cars")
+@XmlRootElement(name = "tasks")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CarRootDto implements Serializable {
-    @XmlElement(name = "car")
-    private List<CarSeedDto> cars;
+public class TaskRootDto implements Serializable {
+    @XmlElement(name = "task")
+    private List<TaskSeedDto> tasks;
 
-    public CarRootDto() {
+    public TaskRootDto() {
     }
 
-    public List<CarSeedDto> getCars() {
-        return cars;
+    public List<TaskSeedDto> getTasks() {
+        return tasks;
     }
 
-    public void setCars(List<CarSeedDto> cars) {
-        this.cars = cars;
+    public void setTasks(List<TaskSeedDto> tasks) {
+        this.tasks = tasks;
     }
 }

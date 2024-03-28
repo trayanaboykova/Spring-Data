@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import softuni.exam.models.dto.xmls.CarRootDto;
 import softuni.exam.models.dto.xmls.CarSeedDto;
 import softuni.exam.models.entity.Car;
-import softuni.exam.models.entity.CarType;
 import softuni.exam.repository.CarsRepository;
 import softuni.exam.service.CarsService;
 import softuni.exam.util.ValidationUtil;
@@ -28,11 +27,13 @@ public class CarsServiceImpl implements CarsService {
     private final CarsRepository carRepository;
     private final ModelMapper modelMapper;
     private final ValidationUtil validationUtil;
+    private final ResourceLoader resourceLoader;
 
-    public CarsServiceImpl(CarsRepository carRepository, ModelMapper modelMapper, ValidationUtil validationUtil) {
+    public CarsServiceImpl(CarsRepository carRepository, ModelMapper modelMapper, ValidationUtil validationUtil, ResourceLoader resourceLoader) {
         this.carRepository = carRepository;
         this.modelMapper = modelMapper;
         this.validationUtil = validationUtil;
+        this.resourceLoader = resourceLoader;
     }
 
 
@@ -43,18 +44,18 @@ public class CarsServiceImpl implements CarsService {
 
     @Override
     public String readCarsFromFile() throws IOException {
-//        Resource resource = resourceLoader.getResource("classpath:files/xml/cars.xml");
-//        InputStream is = resource.getInputStream();
-//        if (is == null) {
-//            throw new IllegalStateException("Can't find file cars.xml in classpath");
-//        }
-//
-//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-//        } catch (IOException e) {
-//            throw new UncheckedIOException("Error occurred while reading file cars.xml", e);
-//        }
-        return Files.readString(Path.of(CARS_FILE_PATH));
+        Resource resource = resourceLoader.getResource("classpath:files/xml/cars.xml");
+        InputStream is = resource.getInputStream();
+        if (is == null) {
+            throw new IllegalStateException("Can't find file cars.xml in classpath");
+        }
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+        } catch (IOException e) {
+            throw new UncheckedIOException("Error occurred while reading file cars.xml", e);
+        }
+//        return Files.readString(Path.of(CARS_FILE_PATH));
     }
 
     @Override
@@ -64,10 +65,10 @@ public class CarsServiceImpl implements CarsService {
         JAXBContext context = JAXBContext.newInstance(CarRootDto.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
 
-//        InputStream is = resourceLoader.getResource("classpath:files/xml/cars.xml").getInputStream();
-//        CarRootDto carRootDto = (CarRootDto) unmarshaller.unmarshal(new InputStreamReader(is));
+        InputStream is = resourceLoader.getResource("classpath:files/xml/cars.xml").getInputStream();
+        CarRootDto carRootDto = (CarRootDto) unmarshaller.unmarshal(new InputStreamReader(is));
 
-        CarRootDto carRootDto = (CarRootDto) unmarshaller.unmarshal(new File(CARS_FILE_PATH));
+//        CarRootDto carRootDto = (CarRootDto) unmarshaller.unmarshal(new File(CARS_FILE_PATH));
 
         List<CarSeedDto> carSeedDtos = carRootDto.getCars();
 
@@ -82,7 +83,6 @@ public class CarsServiceImpl implements CarsService {
             }
 
             Car car = this.modelMapper.map(carSeedDto, Car.class);
-            car.setCarType(CarType.valueOf(carSeedDto.getCarType()));
 
             this.carRepository.saveAndFlush(car);
 

@@ -1,5 +1,7 @@
 package softuni.exam.models.dto.xmls;
 
+import softuni.exam.models.entity.CarType;
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -38,7 +40,7 @@ public class CarSeedDto implements Serializable {
     private double engine;
     @XmlElement
     @NotNull
-    private String carType;
+    private CarType carType;
 
     public CarSeedDto() {
     }
@@ -91,11 +93,11 @@ public class CarSeedDto implements Serializable {
         this.engine = engine;
     }
 
-    public String getCarType() {
+    public CarType getCarType() {
         return carType;
     }
 
-    public void setCarType(String carType) {
+    public void setCarType(CarType carType) {
         this.carType = carType;
     }
 }
