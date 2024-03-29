@@ -17,6 +17,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,18 +47,18 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public String readCompaniesFromFile() throws IOException {
-        Resource resource = resourceLoader.getResource("classpath:files/xml/companies.xml");
-        InputStream is = resource.getInputStream();
-        if (is == null) {
-            throw new IllegalStateException("Can't find file companies.xml in classpath");
-        }
-
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-        } catch (IOException e) {
-            throw new UncheckedIOException("Error occurred while reading file companies.xml", e);
-        }
-//        return Files.readString(Path.of(FILE_PATH));
+//        Resource resource = resourceLoader.getResource("classpath:files/xml/companies.xml");
+//        InputStream is = resource.getInputStream();
+//        if (is == null) {
+//            throw new IllegalStateException("Can't find file companies.xml in classpath");
+//        }
+//
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+//        } catch (IOException e) {
+//            throw new UncheckedIOException("Error occurred while reading file companies.xml", e);
+//        }
+        return Files.readString(Path.of(FILE_PATH));
     }
 
     @Override

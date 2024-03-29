@@ -37,16 +37,17 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public String readCountriesFileContent() throws IOException {
-        InputStream is = getClass().getResourceAsStream("/files/json/countries.json");
-        if (is == null) {
-            throw new IllegalStateException("Can't find file countries.json in classpath");
-        }
-
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-        } catch (IOException e) {
-            throw new UncheckedIOException("Error occurred while reading file countries.json", e);
-        }
+//        InputStream is = getClass().getResourceAsStream("/files/json/countries.json");
+//        if (is == null) {
+//            throw new IllegalStateException("Can't find file countries.json in classpath");
+//        }
+//
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+//        } catch (IOException e) {
+//            throw new UncheckedIOException("Error occurred while reading file countries.json", e);
+//        }
+        return Files.readString(Path.of(FILE_PATH));
 
     }
 

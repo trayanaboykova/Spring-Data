@@ -43,16 +43,17 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public String readPeopleFromFile() throws IOException {
-        InputStream is = getClass().getResourceAsStream("/files/json/people.json");
-        if (is == null) {
-            throw new IllegalStateException("Can't find file people.json in classpath");
-        }
-
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-        } catch (IOException e) {
-            throw new UncheckedIOException("Error occurred while reading file people.json", e);
-        }
+//        InputStream is = getClass().getResourceAsStream("/files/json/people.json");
+//        if (is == null) {
+//            throw new IllegalStateException("Can't find file people.json in classpath");
+//        }
+//
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+//        } catch (IOException e) {
+//            throw new UncheckedIOException("Error occurred while reading file people.json", e);
+//        }
+        return Files.readString(Path.of(FILE_PATH));
     }
 
     @Override

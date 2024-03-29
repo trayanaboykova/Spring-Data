@@ -48,19 +48,19 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public String readJobsFileContent() throws IOException {
-        Resource resource = resourceLoader.getResource("classpath:files/xml/jobs.xml");
-        InputStream is = resource.getInputStream();
-        if (is == null) {
-            throw new IllegalStateException("Can't find file jobs.xml in classpath");
-        }
+//        Resource resource = resourceLoader.getResource("classpath:files/xml/jobs.xml");
+//        InputStream is = resource.getInputStream();
+//        if (is == null) {
+//            throw new IllegalStateException("Can't find file jobs.xml in classpath");
+//        }
+//
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+//            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+//        } catch (IOException e) {
+//            throw new UncheckedIOException("Error occurred while reading file jobs.xml", e);
+//        }
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-        } catch (IOException e) {
-            throw new UncheckedIOException("Error occurred while reading file jobs.xml", e);
-        }
-
-//        return new String(Files.readAllBytes(Path.of(FILE_PATH)));
+        return new String(Files.readAllBytes(Path.of(FILE_PATH)));
     }
 
     @Override
