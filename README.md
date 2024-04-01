@@ -20,3 +20,12 @@ Tasks from my course Spring Data at <a href="www.softuni.bg">SoftUni</a>
 **[JSON Processing](https://github.com/trayanaboykova/Spring-Data/tree/main/Lesson08_JSONProcessing)**: In the lecture on JSON (JavaScript Object Notation) and its processing, I explored both the fundamentals of JSON and delved into GSON, a robust Java library. This session provided valuable insights into the human-readable format of JSON for transmitting data objects, as well as its support for various data types such as numbers, strings, and arrays. While GSON facilitates seamless conversion between JSON data and Java objects, my focus primarily remained on understanding JSON's role in data interchange. By immersing myself in JSON and gaining a foundational understanding of GSON, I acquired skills essential for effective JSON manipulation in Java environments, thus solidifying my knowledge in data processing techniques.
 
 **[XML Processing](https://github.com/trayanaboykova/Spring-Data/tree/main/Lesson09_XMLProcessing)**: During my lesson on XML processing, I immersed myself in a diverse array of techniques aimed at proficiently managing XML data. A pivotal concept introduced was JAXB (Java Architecture for XML Binding), a framework engineered to streamline the conversion of XML documents into Java objects and back, thereby simplifying the intricate process of parsing and manipulating XML data within Java applications. My exploration of JAXB equipped me with the practical skills needed to seamlessly integrate XML data into Java programs.
+
+In the Spring Data course, I've gained a comprehensive understanding of data access and management. I've learned to simplify database interactions using Spring Data Framework, including repository configuration and custom querying. Additionally, I've explored advanced querying techniques and repository inheritance, enhancing my ability to navigate complex data requirements within Spring projects. This training has equipped me with the expertise to build robust and scalable Java applications with efficient data access layers.
+
+# Certificate
+<a href="https://softuni.bg/certificates/details/209417/a2eb90d6" rel="nofollow"><img src="https://github.com/trayanaboykova/Spring-Data/assets/101351760/881e898d-96fd-4386-9db2-84a84e52f99b" alt="SpringData"></a>
+
+
+
+
