@@ -25,7 +25,3 @@ In the Spring Data course, I've gained a comprehensive understanding of data acc
 
 # Certificate
 <a href="https://softuni.bg/certificates/details/209417/a2eb90d6" rel="nofollow"><img src="https://github.com/trayanaboykova/Spring-Data/assets/101351760/881e898d-96fd-4386-9db2-84a84e52f99b" alt="SpringData"></a>
-
-
-
-
