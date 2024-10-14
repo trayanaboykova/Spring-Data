@@ -1,5 +1,5 @@
 # Spring-Data
-Tasks from my course Spring Data at <a href="www.softuni.bg">SoftUni</a> 
+Tasks from my course Spring Data at <a href="https://softuni.bg/">SoftUni</a> 
 
 <b> Course Curriculum: MySQL </b>
 
