@@ -1,7 +1,7 @@
 # Spring-Data
 Tasks from my course Spring Data at <a href="https://softuni.bg/">SoftUni</a> 
 
-<b> Course Curriculum: Spring Data </b> 
+<b> Course Curriculum: [Spring Data Course](https://softuni.bg/trainings/4366/spring-data-february-2024) </b> 
 
 **[DB Apps Introduction](https://github.com/trayanaboykova/Spring-Data/tree/main/Lesson01_DBAppsIntroduction)**: <br> 
 In this segment of the course, I've delved into the crucial connection between applications and databases. Through a comprehensive exploration, I've learned to establish robust connections, employing JDBC statements to execute SQL queries seamlessly. Understanding SQL injection vulnerabilities has been pivotal, allowing me to develop secure applications. Additionally, I've delved into advanced concepts such as transaction management and database optimization, enhancing my proficiency in database application development.
