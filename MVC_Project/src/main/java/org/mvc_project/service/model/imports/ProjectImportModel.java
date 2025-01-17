@@ -6,8 +6,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.math.BigDecimal;
 
-@JacksonXmlRootElement(localName = "project")
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class ProjectImportModel {
 
     @JacksonXmlProperty

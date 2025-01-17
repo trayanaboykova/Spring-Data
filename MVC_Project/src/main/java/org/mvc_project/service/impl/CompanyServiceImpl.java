@@ -2,6 +2,7 @@ package org.mvc_project.service.impl;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.modelmapper.ModelMapper;
+import org.mvc_project.data.entities.Company;
 import org.mvc_project.data.repositories.CompanyRepository;
 import org.mvc_project.service.CompanyService;
 import org.mvc_project.service.model.imports.CompanyRootImportModel;
@@ -34,18 +35,17 @@ public class CompanyServiceImpl implements CompanyService {
         return this.companyRepository.count() > 0;
     }
 
-    //TODO DO IT WITH JACKSON, some errors are appearing
-    //Already tested with JAXB
     @Override
     public void seedData() throws JAXBException, IOException {
         XmlMapper xmlMapper = new XmlMapper();
         CompanyRootImportModel companyRootImportModel = xmlMapper.readValue(readFile(), CompanyRootImportModel.class);
-        System.out.println();
+
 //        CompanyRootImportModel companyRootImportModel = this.xmlParser.fromFile(FILE_PATH, CompanyRootImportModel.class);
-//        companyRootImportModel.getCompanyImportModels().forEach(company -> {
-//            System.out.println();
-//            this.companyRepository.saveAndFlush(this.modelMapper.map(company, Company.class));
-//        });
+        companyRootImportModel.getCompanyImportModels().forEach(company -> {
+            System.out.println();
+            Company toPersist = this.modelMapper.map(company, Company.class);
+            this.companyRepository.saveAndFlush(toPersist);
+        });
     }
 
     @Override

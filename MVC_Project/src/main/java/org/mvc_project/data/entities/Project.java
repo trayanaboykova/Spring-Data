@@ -13,7 +13,7 @@ public class Project extends BaseEntity {
     private String name;
     @Column
     private String description;
-    @Column(name = "is+finished")
+    @Column(name = "is_finished")
     private boolean isFinished;
     @Column
     private BigDecimal payment;
@@ -69,5 +69,11 @@ public class Project extends BaseEntity {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Project Name: %s%n  Description: %s%n  %.2f",
+                this.name, this.description, this.payment);
     }
 }

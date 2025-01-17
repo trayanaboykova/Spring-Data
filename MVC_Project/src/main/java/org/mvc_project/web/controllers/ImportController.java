@@ -1,6 +1,7 @@
 package org.mvc_project.web.controllers;
 
 import org.mvc_project.service.CompanyService;
+import org.mvc_project.service.EmployeeService;
 import org.mvc_project.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,19 +19,25 @@ public class ImportController {
 
     private final CompanyService companyService;
     private final ProjectService projectService;
+    private final EmployeeService employeeService;
 
     @Autowired
-    public ImportController(CompanyService companyService, ProjectService projectService) {
+    public ImportController(CompanyService companyService, ProjectService projectService, EmployeeService employeeService) {
         this.companyService = companyService;
         this.projectService = projectService;
+        this.employeeService = employeeService;
     }
 
     @GetMapping("/xml")
     public ModelAndView xml() {
-        ModelAndView modelAndView = new ModelAndView("xml/import-xml");
-        modelAndView.addObject("areImported",new boolean[]{ this.companyService.isImported(),
+        boolean[] imported = {
+                this.companyService.isImported(),
                 this.projectService.isImported(),
-                false});
+                this.employeeService.isImported()
+        };
+
+        ModelAndView modelAndView = new ModelAndView("xml/import-xml");
+        modelAndView.addObject("areImported", imported);
         return modelAndView;
     }
 
@@ -46,9 +53,9 @@ public class ImportController {
         ModelAndView modelAndView = new ModelAndView("redirect:xml");
         this.companyService.seedData();
         return modelAndView;
+
+//        return "redirect:xml";
     }
-
-
 
     @GetMapping("/projects")
     public ModelAndView projects() throws IOException {
@@ -64,11 +71,19 @@ public class ImportController {
         return modelAndView;
     }
 
-
     @GetMapping("/employees")
-    public ModelAndView employees() {
+    public ModelAndView employees() throws IOException {
         ModelAndView modelAndView = new ModelAndView("xml/import-employees");
-        modelAndView.addObject("employees","");
+        modelAndView.addObject("employees", this.employeeService.readFile());
+        return modelAndView;
+    }
+
+    @PostMapping("/employees")
+    public ModelAndView seedEmployees() throws JAXBException, IOException {
+        ModelAndView modelAndView = new ModelAndView("redirect:xml");
+
+        this.employeeService.seedData();
+
         return modelAndView;
     }
 }

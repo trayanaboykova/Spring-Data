@@ -8,10 +8,9 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import java.util.Set;
 
 @JacksonXmlRootElement(localName = "projects")
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class ProjectRootImportModel {
 
-    @JacksonXmlElementWrapper
+    @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "project")
     private Set<ProjectImportModel> projects;
 

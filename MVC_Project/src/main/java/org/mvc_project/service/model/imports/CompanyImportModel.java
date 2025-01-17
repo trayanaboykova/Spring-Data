@@ -1,6 +1,7 @@
 package org.mvc_project.service.model.imports;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -9,7 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class CompanyImportModel {
 
-    @XmlAttribute
+    @JacksonXmlProperty(localName = "name", isAttribute = true)
     private String name;
 
     public CompanyImportModel() {

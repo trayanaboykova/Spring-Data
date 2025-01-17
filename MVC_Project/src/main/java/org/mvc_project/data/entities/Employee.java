@@ -47,4 +47,12 @@ public class Employee extends BaseEntity {
     public void setProject(Project project) {
         this.project = project;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s %s%n  Age: %d%n  Project name: %s",
+                this.firstName, this.lastName, this.age,
+                this.project.getName()
+        );
+    }
 }
