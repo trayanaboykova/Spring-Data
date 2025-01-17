@@ -17,7 +17,7 @@ import java.nio.file.Path;
 
 @Service
 public class CompanyServiceImpl implements CompanyService {
-    private static final String FILE_PATH = "src/main/resources/files/xmls/companies.xml";
+    private static final String FILE_PATH = "src/main/resources/files/companies.xml";
 
     private final CompanyRepository companyRepository;
     private final ModelMapper modelMapper;

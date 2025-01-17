@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private static final String FILE_PATH = "src/main/resources/files/xmls/employees.xml";
+    private static final String FILE_PATH = "src/main/resources/files/employees.xml";
 
     private final ModelMapper modelMapper;
     private final ProjectRepository projectRepository;

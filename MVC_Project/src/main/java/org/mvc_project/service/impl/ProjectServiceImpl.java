@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Service
 public class ProjectServiceImpl implements ProjectService {
 
-    private static final String FILE_PATH = "src/main/resources/files/xmls/projects.xml";
+    private static final String FILE_PATH = "src/main/resources/files/projects.xml";
 
 
     private final ProjectRepository projectRepository;
