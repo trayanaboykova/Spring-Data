@@ -11,15 +11,17 @@ import softuni.exam.repository.StarRepository;
 import softuni.exam.service.StarService;
 import softuni.exam.util.ValidationUtil;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class StarServiceImpl implements StarService {
-    private static final String FILE_PATH = "src/main/resources/files/json/stars.json";
+    private static final String FILE_PATH = "files/json/stars.json"; // Adjusted for ClassLoader
     private final StarRepository starRepository;
     private final ConstellationRepository constellationRepository;
     private final Gson gson;
@@ -41,26 +43,35 @@ public class StarServiceImpl implements StarService {
 
     @Override
     public String readStarsFileContent() throws IOException {
-        return new String(Files.readAllBytes(Path.of(FILE_PATH)));
+        return loadFileFromClasspath(FILE_PATH);
     }
 
     @Override
     public String importStars() throws IOException {
         StringBuilder sb = new StringBuilder();
-        StarSeedDto[] starSeedDtos = this.gson.fromJson(readStarsFileContent(), StarSeedDto[].class);
+
+        // Load JSON file from classpath
+        String fileContent = loadFileFromClasspath(FILE_PATH);
+        StarSeedDto[] starSeedDtos = this.gson.fromJson(fileContent, StarSeedDto[].class);
 
         for (StarSeedDto starSeedDto : starSeedDtos) {
-            Optional<Star> optional = this.starRepository.findByName(starSeedDto.getName());
-            if (!this.validationUtil.isValid(starSeedDto) || optional.isPresent()) {
+            Optional<Star> optionalStar = this.starRepository.findByName(starSeedDto.getName());
+
+            if (!this.validationUtil.isValid(starSeedDto) || optionalStar.isPresent()) {
                 sb.append("Invalid star\n");
                 continue;
             }
 
             Star star = this.modelMapper.map(starSeedDto, Star.class);
             star.setStarType(StarType.valueOf(starSeedDto.getStarType()));
-            star.setConstellation(this.constellationRepository.getById(starSeedDto.getConstellation()));
+
+            // Check if constellation exists before setting it
+            this.constellationRepository.findById(starSeedDto.getConstellation())
+                    .ifPresent(star::setConstellation);
+
             this.starRepository.saveAndFlush(star);
-            sb.append(String.format("Successfully imported star %s - %.2f light years\n", star.getName(), star.getLightYears()));
+            sb.append(String.format("Successfully imported star %s - %.2f light years\n",
+                    star.getName(), star.getLightYears()));
         }
 
         return sb.toString();
@@ -78,7 +89,18 @@ public class StarServiceImpl implements StarService {
                         s.getName(),
                         s.getLightYears(),
                         s.getDescription(),
-                        s.getConstellation().getName()))
+                        s.getConstellation() != null ? s.getConstellation().getName() : "N/A"))
                 .collect(Collectors.joining());
+    }
+
+    // 🔥 **Helper Method to Load File from Classpath**
+    private String loadFileFromClasspath(String filePath) throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("File not found in classpath: " + filePath);
+        }
+
+        return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
     }
 }

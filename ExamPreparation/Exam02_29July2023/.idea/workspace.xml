@@ -5,16 +5,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a73e363-2115-41a4-b641-1455c3f5b7a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/CarsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/CarsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/TasksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/src/main/java/softuni/exam/service/impl/TasksServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/CarsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/CarsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/TasksServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam10_03December2022/skeleton/target/classes/softuni/exam/service/impl/TasksServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam01_13August2023/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam01_13August2023/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam01_13August2023/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam01_13August2023/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam01_13August2023/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam01_13August2023/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exam01_13August2023/target/classes/softuni/exam/web/controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exam01_13August2023/target/classes/softuni/exam/web/controllers/BaseController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/38d2189c-6b7a-414a-92f5-db49982935a0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/38d2189c-6b7a-414a-92f5-db49982935a0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/java/softuni/exam/service/impl/AstronomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/java/softuni/exam/service/impl/AstronomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/java/softuni/exam/service/impl/ConstellationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/java/softuni/exam/service/impl/ConstellationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/java/softuni/exam/service/impl/StarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/java/softuni/exam/service/impl/StarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/service/impl/AstronomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/service/impl/AstronomerServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/service/impl/ConstellationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/service/impl/ConstellationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/service/impl/StarServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/service/impl/StarServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/web/controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Find-a-Star Skeleton/target/classes/softuni/exam/web/controllers/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/IntroductionToHibernate_Exercise/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Exercise/IntroductionToHibernate_Exercise/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Lab/JPA_Intro_Lab/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson03_IntroductionToHibernate/Lab/JPA_Intro_Lab/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson04_HibernateCodeFirst/HibernateCodeFirst_Demo/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson04_HibernateCodeFirst/HibernateCodeFirst_Demo/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson04_HibernateCodeFirst/HibernateCodeFirst_Exercise/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson04_HibernateCodeFirst/HibernateCodeFirst_Exercise/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson04_HibernateCodeFirst/HibernateCodeFirst_Lab/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson04_HibernateCodeFirst/HibernateCodeFirst_Lab/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/SpringDataIntro_Exercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/SpringDataIntro_Exercise/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/SpringDataIntro_Lab/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson05_SpringDataIntro/SpringDataIntro_Lab/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/CommandLineRunnerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/CommandLineRunnerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/repository/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/repository/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/impl/AuthorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/impl/AuthorServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Exercise/target/classes/com/example/springintro/service/impl/CategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/CommandLineRunnerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/CommandLineRunnerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/repositories/IngredientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/repositories/IngredientRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/service/IngredientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/service/IngredientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/service/impl/IngredientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/service/impl/IngredientServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/service/impl/ShampooServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson06_SpringDataAdvancedQuerying/SpringDataAdvancedQuerying_Lab/target/classes/com/example/advquerying/service/impl/ShampooServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/AutoMappingObjects_Exercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/AutoMappingObjects_Exercise/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/AutoMappingObjects_Lab/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson07_SpringDataAutoMappingObjects/AutoMappingObjects_Lab/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/JSONProcessing_Exercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson08_JSONProcessing/JSONProcessing_Exercise/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson09_XMLProcessing/XMLProcessing_Exercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson09_XMLProcessing/XMLProcessing_Exercise/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson09_XMLProcessing/XMLProcessing_Exercise/src/main/resources/xml/exports/sales-discounts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson09_XMLProcessing/XMLProcessing_Exercise/src/main/resources/xml/exports/sales-discounts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MVC_Project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../MVC_Project/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,37 +90,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.exam in exam.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.import_Astronomers in exam.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.import_Constellations in exam.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in exam.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ExamApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.exam in exam.executor": "Run",
+    "JUnit.import_Astronomers in exam.executor": "Run",
+    "JUnit.import_Constellations in exam.executor": "Run",
+    "JUnit.java in exam.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ExamApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Coding/GitHub/Spring-Data/ExamPreparation/Exam02_29July2023",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.ExamApplication">
     <configuration name="exam in exam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="exam" />
@@ -100,10 +160,18 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="exam" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="softuni.exam.ExamApplication" />
+      <option name="VM_PARAMETERS" value="-Ddb_username=root -Ddb_password=root" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.exam in exam" />
+      <item itemvalue="JUnit.import_Astronomers in exam" />
+      <item itemvalue="JUnit.import_Constellations in exam" />
+      <item itemvalue="JUnit.java in exam" />
+      <item itemvalue="Spring Boot.ExamApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.import_Astronomers in exam" />
@@ -112,6 +180,14 @@
         <item itemvalue="JUnit.exam in exam" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -145,6 +221,8 @@
       <workItem from="1711647234904" duration="51000" />
       <workItem from="1711654578316" duration="1934000" />
       <workItem from="1711657267216" duration="163000" />
+      <workItem from="1738155374001" duration="509000" />
+      <workItem from="1738156045621" duration="1563000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.51">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1147,37 +1147,37 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </table>
     <column id="333" parent="330" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </column>
     <column id="334" parent="330" name="average_observation_hours">
-      <DasType>double|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
+      <StoredType>double|0s</StoredType>
     </column>
     <column id="335" parent="330" name="birthday">
-      <DasType>date|0s</DasType>
       <Position>3</Position>
+      <StoredType>date|0s</StoredType>
     </column>
     <column id="336" parent="330" name="first_name">
-      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="337" parent="330" name="last_name">
-      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="338" parent="330" name="salary">
-      <DasType>double|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
+      <StoredType>double|0s</StoredType>
     </column>
     <column id="339" parent="330" name="observing_star_id">
-      <DasType>bigint|0s</DasType>
       <Position>7</Position>
+      <StoredType>bigint|0s</StoredType>
     </column>
     <foreign-key id="340" parent="330" name="FKes9nudi2au4kuva7s9m8h9nuu">
       <ColNames>observing_star_id</ColNames>
@@ -1200,19 +1200,19 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="344" parent="331" name="id">
       <AutoIncrement>20</AutoIncrement>
-      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </column>
     <column id="345" parent="331" name="description">
-      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="346" parent="331" name="name">
-      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <index id="347" parent="331" name="PRIMARY">
       <ColNames>id</ColNames>
@@ -1234,33 +1234,33 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="351" parent="332" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </column>
     <column id="352" parent="332" name="description">
-      <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
+      <StoredType>text|0s</StoredType>
     </column>
     <column id="353" parent="332" name="light_years">
-      <DasType>double|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
+      <StoredType>double|0s</StoredType>
     </column>
     <column id="354" parent="332" name="name">
-      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="355" parent="332" name="star_type">
-      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="356" parent="332" name="constellation_id">
-      <DasType>bigint|0s</DasType>
       <Position>6</Position>
+      <StoredType>bigint|0s</StoredType>
     </column>
     <foreign-key id="357" parent="332" name="FK1453j7vhfqo6di7247y5cn0rs">
       <ColNames>constellation_id</ColNames>

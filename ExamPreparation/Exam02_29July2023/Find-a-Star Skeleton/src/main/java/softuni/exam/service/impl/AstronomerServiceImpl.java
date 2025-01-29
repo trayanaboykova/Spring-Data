@@ -14,15 +14,15 @@ import softuni.exam.util.ValidationUtil;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 @Service
 public class AstronomerServiceImpl implements AstronomerService {
-    private static final String FILE_PATH = "src/main/resources/files/xml/astronomers.xml";
+    private static final String FILE_PATH = "files/xml/astronomers.xml"; // Adjusted for ClassLoader
     private final AstronomerRepository astronomerRepository;
     private final StarRepository starRepository;
     private final ValidationUtil validationUtil;
@@ -42,21 +42,30 @@ public class AstronomerServiceImpl implements AstronomerService {
 
     @Override
     public String readAstronomersFromFile() throws IOException {
-        return new String(Files.readAllBytes(Path.of(FILE_PATH)));
+        return loadFileFromClasspath(FILE_PATH);
     }
 
     @Override
     public String importAstronomers() throws IOException, JAXBException {
         StringBuilder sb = new StringBuilder();
 
+        // Load XML file using ClassLoader
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("File not found in classpath: " + FILE_PATH);
+        }
+
+        // Setup JAXB for XML parsing
         JAXBContext jaxbContext = JAXBContext.newInstance(AstronomerRootDto.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        AstronomerRootDto astronomerRootDto = (AstronomerRootDto)unmarshaller.unmarshal(new File(FILE_PATH));
+        AstronomerRootDto astronomerRootDto = (AstronomerRootDto) unmarshaller.unmarshal(inputStream);
 
         for (AstronomerSeedDto astronomerSeedDto : astronomerRootDto.getAstronomerSeedDtos()) {
             Optional<Astronomer> optionalAstronomer = this.astronomerRepository
                     .findByFirstNameAndLastName(astronomerSeedDto.getFirstName(), astronomerSeedDto.getLastName());
             Optional<Star> optionalStar = this.starRepository.findById(astronomerSeedDto.getStar());
+
             if (!this.validationUtil.isValid(astronomerSeedDto) || optionalAstronomer.isPresent() || optionalStar.isEmpty()) {
                 sb.append("Invalid astronomer\n");
                 continue;
@@ -64,11 +73,22 @@ public class AstronomerServiceImpl implements AstronomerService {
 
             Astronomer astronomer = this.modelMapper.map(astronomerSeedDto, Astronomer.class);
             astronomer.setObservingStar(optionalStar.get());
-            this.astronomerRepository.saveAndFlush(astronomer);
 
+            this.astronomerRepository.saveAndFlush(astronomer);
             sb.append(String.format("Successfully imported astronomer %s %s - %.2f\n",
                     astronomer.getFirstName(), astronomer.getLastName(), astronomer.getAverageObservationHours()));
         }
         return sb.toString();
+    }
+
+    // 🔥 **Helper Method to Load File from Classpath**
+    private String loadFileFromClasspath(String filePath) throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("File not found in classpath: " + filePath);
+        }
+
+        return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
     }
 }

@@ -9,15 +9,16 @@ import softuni.exam.repository.ConstellationRepository;
 import softuni.exam.service.ConstellationService;
 import softuni.exam.util.ValidationUtil;
 
-import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 @Service
 public class ConstellationServiceImpl implements ConstellationService {
-    private static final String FILE_PATH = "src/main/resources/files/json/constellations.json";
+    private static final String FILE_PATH = "files/json/constellations.json"; // Adjusted for classpath loading
     private final ConstellationRepository constellationRepository;
     private final Gson gson;
     private final ModelMapper modelMapper;
@@ -30,7 +31,6 @@ public class ConstellationServiceImpl implements ConstellationService {
         this.validationUtil = validationUtil;
     }
 
-
     @Override
     public boolean areImported() {
         return this.constellationRepository.count() > 0;
@@ -38,22 +38,44 @@ public class ConstellationServiceImpl implements ConstellationService {
 
     @Override
     public String readConstellationsFromFile() throws IOException {
-        return new String(Files.readAllBytes(Path.of(FILE_PATH)));
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("File not found in classpath: " + FILE_PATH);
+        }
+
+        return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
     }
 
     @Override
     public String importConstellations() throws IOException {
         StringBuilder sb = new StringBuilder();
-        ConstellationSeedDto[] constellationSeedDtos = this.gson.fromJson(new FileReader(FILE_PATH), ConstellationSeedDto[].class);
+
+        // Load JSON using ClassLoader
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
+
+        if (inputStream == null) {
+            throw new FileNotFoundException("File not found in classpath: " + FILE_PATH);
+        }
+
+        // Read JSON file using InputStreamReader
+        ConstellationSeedDto[] constellationSeedDtos = gson.fromJson(
+                new InputStreamReader(inputStream, StandardCharsets.UTF_8),
+                ConstellationSeedDto[].class
+        );
+
         for (ConstellationSeedDto constellationSeedDto : constellationSeedDtos) {
             Optional<Constellation> optional = this.constellationRepository.findByName(constellationSeedDto.getName());
-            if (!this.validationUtil.isValid(constellationSeedDto) || optional.isPresent() ) {
+
+            if (!this.validationUtil.isValid(constellationSeedDto) || optional.isPresent()) {
                 sb.append("Invalid constellation\n");
                 continue;
             }
+
             Constellation constellation = this.modelMapper.map(constellationSeedDto, Constellation.class);
             this.constellationRepository.saveAndFlush(constellation);
-            sb.append(String.format("Successfully imported constellation %s - %s\n", constellation.getName(), constellation.getDescription()));
+            sb.append(String.format("Successfully imported constellation %s - %s\n",
+                    constellation.getName(), constellation.getDescription()));
         }
         return sb.toString();
     }
